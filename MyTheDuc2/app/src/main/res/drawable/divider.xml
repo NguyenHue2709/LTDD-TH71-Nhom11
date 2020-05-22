@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:tools="http://schemas.android.com/tools"
+    xmlns:Android = "http://schemas.Android.com/apk/res/Android"
+    tools:ignore="NamespaceTypo">
+    <size
+        Android:width = "2dp"
+        Android:height = "8dp"/>
+</shape>

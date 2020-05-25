@@ -74,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent huongDan = new Intent(this, HuongDanActivity.class);
                 startActivity(huongDan);
                 return true;
+            case R.id.action_CaiDat:
+                Intent caiDat = new Intent(this, CaiDatActivity.class);
+                startActivity(caiDat);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -8,18 +8,19 @@ import android.view.MenuItem;
 
 import com.example.mytheduc.R;
 
-public class HuongDanActivity extends AppCompatActivity {
+public class CaiDatActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_huong_dan);
+        setContentView(R.layout.activity_cai_dat);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle("HƯỚNG DẪN");
-
+        actionBar.setTitle("Cài đặt");
     }
 
     @Override

@@ -35,9 +35,6 @@ public class HuongDanActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("HƯỚNG DẪN");
 
-
-
-
         anhxa();
         init();
 

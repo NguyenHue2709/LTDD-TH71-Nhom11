@@ -18,26 +18,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
-        android:id="@+id/txtNgauNhien"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtThoiGian"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginLeft="21dp"
         android:layout_marginTop="70dp"
-        android:text="Ngẫu nhiên"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtNgauNhien2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="320dp"
-        android:layout_marginLeft="320dp"
-        android:layout_marginTop="70dp"
+        android:gravity="right|center"
         android:text="Thời gian"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -48,15 +34,17 @@
         android:id="@+id/switchNgauNhien"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
         android:layout_marginTop="70dp"
+        android:text="Ngầu nhiên"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/listBaiTap"
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="520dp"
         android:layout_marginStart="21dp"
         android:layout_marginLeft="21dp"

@@ -7,17 +7,26 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.Toast;
 
+import com.example.mytheduc.Adapter.BatDauAdapter;
+import com.example.mytheduc.Model.BatDau_Model;
 import com.example.mytheduc.R;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class BatDauActivity extends Activity  {
 
-    /*private ListView lvBatDau;
-    private ArrayList <String> list;*/
+    ArrayList<BatDau_Model> listBaiTap;
+    BatDauAdapter bd;
+    ListView list;
+    Switch sw;
+
     private Button btn_Di;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +38,27 @@ public class BatDauActivity extends Activity  {
             public void onClick(View v) {
                 Intent intent = new Intent(BatDauActivity.this, SanSangActivity.class);
                 startActivity(intent);
+            }
+        });
+        listBaiTap = new ArrayList<>();
+        listBaiTap.add(new BatDau_Model("Bài 1"));
+        listBaiTap.add(new BatDau_Model("Bài 2"));
+        listBaiTap.add(new BatDau_Model("Bài 3"));
+        listBaiTap.add(new BatDau_Model("Bài 4"));
+        listBaiTap.add(new BatDau_Model("Bài 5"));
+        listBaiTap.add(new BatDau_Model("Bài 6"));
+        bd = new BatDauAdapter(listBaiTap);
+
+        list = findViewById(R.id.listBaiTap);
+        list.setAdapter(bd);
+
+        sw = (Switch) findViewById(R.id.switchNgauNhien);
+        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Collections.shuffle(listBaiTap);
+                list = findViewById(R.id.listBaiTap);
+                list.setAdapter(bd);
             }
         });
     }

@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/BayPhutTheDuc.iml" filepath="$PROJECT_DIR$/.idea/BayPhutTheDuc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/LTDD-TH71-Nhom11-app.iml" filepath="$PROJECT_DIR$/app/LTDD-TH71-Nhom11-app.iml" group="MyTheDuc/app" />
-      <module fileurl="file://$PROJECT_DIR$/app/LTTBDD-LTDD-TH71-Nhom11-app.iml" filepath="$PROJECT_DIR$/app/LTTBDD-LTDD-TH71-Nhom11-app.iml" group="MyTheDuc/app" />
       <module fileurl="file://$PROJECT_DIR$/MyTheDuc.iml" filepath="$PROJECT_DIR$/MyTheDuc.iml" group="MyTheDuc" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="MyTheDuc/app" />
     </modules>

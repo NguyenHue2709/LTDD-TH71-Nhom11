@@ -63,9 +63,9 @@ public class HuongDanActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        int id = item.getItemId();
-        if(id == android.R.id.home){
-            this.finish();
+                int id = item.getItemId();
+                if(id == android.R.id.home){
+                    this.finish();
         }
         return super.onOptionsItemSelected(item);
     }

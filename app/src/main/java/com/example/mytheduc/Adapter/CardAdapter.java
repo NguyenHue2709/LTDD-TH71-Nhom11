@@ -3,26 +3,19 @@ package com.example.mytheduc.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mytheduc.Activity.BatDauActivity;
 import com.example.mytheduc.Activity.HuongDanActivity;
-import com.example.mytheduc.Fragment.Fragment_BaiTap;
-import com.example.mytheduc.Fragment.Fragment_CoDien;
 import com.example.mytheduc.Model.Planet;
-import com.example.mytheduc.OnClickItem;
 import com.example.mytheduc.R;
 
 import java.util.ArrayList;
@@ -35,18 +28,12 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.PlanetHolder>{
 
     //private Button btn;
 
-
-
-
     public CardAdapter (Context context, ArrayList<Planet> planets){
         this.context = context;
         this.planets = planets;
 
 
     }
-
-
-
 
     @NonNull
     @Override
@@ -68,14 +55,19 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.PlanetHolder>{
                 Intent intent = new Intent(v.getContext(),HuongDanActivity.class);
                 intent.putExtra("viewpager_position", 1);
                 v.getContext().startActivity(intent);
-
-
             }
         });
         holder.setDetails(planet);
-
-
-
+        holder.btn_BatDau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = 2;
+                Intent intent = new Intent (v.getContext(), BatDauActivity.class);
+                intent.putExtra("viewpager_position", 2);
+                v.getContext().startActivity(intent);
+            }
+        });
+        holder.setDetails(planet);
     }
 
 
@@ -89,6 +81,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.PlanetHolder>{
         private TextView txt_dinhNghia;
         private ImageView img;
         private Button btn_huongDan;
+        private Button btn_BatDau;
 
         PlanetHolder(View itemView){
             super(itemView);
@@ -96,6 +89,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.PlanetHolder>{
             txt_dinhNghia = itemView.findViewById(R.id.txt_DinhNghia);
             img = itemView.findViewById(R.id.myImg);
             btn_huongDan = itemView.findViewById(R.id.btn_HuongDan);
+            btn_BatDau = itemView.findViewById(R.id.btn_BatDau);
 
         }
 

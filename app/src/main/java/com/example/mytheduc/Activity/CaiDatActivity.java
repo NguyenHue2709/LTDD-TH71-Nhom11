@@ -11,7 +11,6 @@ import com.example.mytheduc.R;
 public class CaiDatActivity extends AppCompatActivity {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +20,7 @@ public class CaiDatActivity extends AppCompatActivity {
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("Cài đặt");
+
     }
 
     @Override
@@ -31,4 +31,5 @@ public class CaiDatActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

@@ -53,5 +53,5 @@ public class Fragment_CoDien extends Fragment {
         coDienPlanetArrayList.add(new CoDienPlanet("2. NGỒI DỰA TƯỜNG",R.drawable.duatuong,"bắt đầu bằng việc dựa lưng vào tường, sau đó trượt xuống cho tới khi đầu gối vuông góc. dựa lương vào tường, để tay và cánh tay phía trên chân. Giữa tư thế. Baig tập này nhằm làm tăng các cơ bốn đầu đuồi."));
         coDienPlanetArrayList.add(new CoDienPlanet("3. ĐO SÀN",R.drawable.dosan,"nằm trên sàn, chạm sàn bằng ngón chân và cẳng tay. Giữ thẳng cơ thể và giữ cơ thể càng lâu càng tốt. Bài tập này làm khỏe cơ bụng, lưng và vai"));
         coDienPlanetArrayList.add(new CoDienPlanet("4. CHỐNG ĐẨY VÀ XOAY NGƯỜI",R.drawable.xoaynguoi,"Bắt đầu ở tư thế chống đẩy và khi nâng lên, xoay thân trên và giơ tay phải lên trên. Lặp lại bài tập này với tay kia. Đây là bài tập tuyệt vời cho ngực, vai, tay và phần trung tâm."));
-    }
+}
 }

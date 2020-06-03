@@ -2,10 +2,12 @@ package com.example.mytheduc.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,20 +29,39 @@ import java.util.Collections;
 
 
 public class BatDauActivity extends AppCompatActivity {
-
+    private ProgressBar progressBar;
     private ArrayList<BatDau_Model> listBaiTap = new ArrayList<>();
     private Switch sw;
     private Button btn_Di;
+    BatDauAdapter batDauAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_batdau);
+        progressBar = (ProgressBar) findViewById(R.id.progress_circular);
         btn_Di = (Button) findViewById(R.id.btnDi);
         btn_Di.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(BatDauActivity.this, SanSangActivity.class);
                 startActivity(intent);
+                CountDownTimer countDownTimer = new CountDownTimer(15000, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        int current = progressBar.getProgress();
+                        if (current >=progressBar.getMax()) {
+                            current = 0;
+                        }
+                        progressBar.setProgress(current + 10);
+                    }
+
+                    @Override
+                    public void onFinish() {
+
+
+                    }
+                };
+                countDownTimer.start();
             }
         });
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -83,6 +104,7 @@ public class BatDauActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 Collections.shuffle(listBaiTap);
+                batDauAdapter = new BatDauAdapter(listBaiTap);
             }
         });
     }

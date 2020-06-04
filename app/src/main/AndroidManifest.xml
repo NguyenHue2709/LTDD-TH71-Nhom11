@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.CaiDatActivity"></activity>
+        <activity android:name=".Activity.NhacTapMoiNgay"></activity>
+        <activity android:name=".Activity.CaiDatActivity" />
         <activity android:name=".Activity.HuongDanActivity" />
         <activity android:name=".Activity.MainActivity">
             <intent-filter>
@@ -18,8 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.BatDauActivity"/>
-        <activity android:name=".Activity.SanSangActivity"/>
+        <activity android:name=".Activity.BatDauActivity" />
+        <activity android:name=".Activity.SanSangActivity" />
     </application>
 
 </manifest>

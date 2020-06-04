@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,6 +35,7 @@ public  class CaiDatActivity extends AppCompatActivity {
      Button nPCountDown;
      TextView NumberCountDown;
 
+    private Button btn_nhactap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +85,19 @@ public  class CaiDatActivity extends AppCompatActivity {
             }
         });
 
+        
+        btn_nhactap = (Button) findViewById(R.id.btn_NhacTapMoiNgay);
+        btn_nhactap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNhacTapMoiNgay();
+            }
+        });
+    }
+
+    public void openNhacTapMoiNgay(){
+        Intent intt_NhacTap = new Intent(this, NhacTapMoiNgay.class);
+        startActivity(intt_NhacTap);
     }
 
     @Override

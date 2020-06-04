@@ -25,7 +25,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.PlanetHolder>{
     //private static final android.R.attr R = ;
     private Context context;
     private ArrayList<Planet> planets;
-
+    public static String ten;
     //private Button btn;
 
     public CardAdapter (Context context, ArrayList<Planet> planets){
@@ -43,14 +43,13 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.PlanetHolder>{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PlanetHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final PlanetHolder holder, final int position) {
 
-        Planet planet = planets.get(position);
+        final Planet planet = planets.get(position);
         holder.btn_huongDan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Intent intent;
-
                 int position = 1;
                 Intent intent = new Intent(v.getContext(),HuongDanActivity.class);
                 intent.putExtra("viewpager_position", 1);
@@ -65,6 +64,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.PlanetHolder>{
                 Intent intent = new Intent (v.getContext(), BatDauActivity.class);
                 intent.putExtra("viewpager_position", 2);
                 v.getContext().startActivity(intent);
+                ten = planet.planetName;
             }
         });
         holder.setDetails(planet);

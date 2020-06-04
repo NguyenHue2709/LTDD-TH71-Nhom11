@@ -1,84 +1,111 @@
 package com.example.mytheduc.Activity;
-
-import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Switch;
-import android.widget.Toast;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.mytheduc.Adapter.BatDauAdapter;
+import com.example.mytheduc.Adapter.CardAdapter;
+import com.example.mytheduc.Fragment.Fragment_BatDau_CoDien;
+import com.example.mytheduc.Fragment.Fragment_BatDau_TapChan;
+import com.example.mytheduc.Fragment.Fragment_BatDau_TapCoBung;
+import com.example.mytheduc.Fragment.Fragment_BatDau_TapTay;
 import com.example.mytheduc.Model.BatDau_Model;
+import com.example.mytheduc.Model.Planet;
 import com.example.mytheduc.R;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
-public class BatDauActivity extends Activity  {
 
-    ArrayList<BatDau_Model> listBaiTap;
-    BatDauAdapter bd;
-    ListView list;
-    Switch sw;
-
+public class BatDauActivity extends AppCompatActivity {
+    private ProgressBar progressBar;
+    private ArrayList<BatDau_Model> listBaiTap = new ArrayList<>();
+    private Switch sw;
     private Button btn_Di;
+    BatDauAdapter batDauAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_batdau);
+        progressBar = (ProgressBar) findViewById(R.id.progress_circular);
         btn_Di = (Button) findViewById(R.id.btnDi);
         btn_Di.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(BatDauActivity.this, SanSangActivity.class);
                 startActivity(intent);
+                CountDownTimer countDownTimer = new CountDownTimer(15000, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        int current = progressBar.getProgress();
+                        if (current >=progressBar.getMax()) {
+                            current = 0;
+                        }
+                        progressBar.setProgress(current + 10);
+                    }
+
+                    @Override
+                    public void onFinish() {
+
+
+                    }
+                };
+                countDownTimer.start();
             }
         });
-        listBaiTap = new ArrayList<>();
-        listBaiTap.add(new BatDau_Model("Bài 1"));
-        listBaiTap.add(new BatDau_Model("Bài 2"));
-        listBaiTap.add(new BatDau_Model("Bài 3"));
-        listBaiTap.add(new BatDau_Model("Bài 4"));
-        listBaiTap.add(new BatDau_Model("Bài 5"));
-        listBaiTap.add(new BatDau_Model("Bài 6"));
-        bd = new BatDauAdapter(listBaiTap);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        String id = CardAdapter.ten;
+        switch (id) {
+            case "CỔ ĐIỂN": {
+                Fragment_BatDau_CoDien fragment_batDau_coDien = new Fragment_BatDau_CoDien();
+                fragment_batDau_coDien.setList(listBaiTap);
+                fragmentTransaction.add(R.id.fragBatDau, fragment_batDau_coDien);
+                fragmentTransaction.commit();
+                break;
+            }
+            case "TẬP CƠ BỤNG":{
+                Fragment_BatDau_TapCoBung fragment_batDau_tapCoBung = new Fragment_BatDau_TapCoBung();
+                fragment_batDau_tapCoBung.setList(listBaiTap);
+                fragmentTransaction.add(R.id.fragBatDau, fragment_batDau_tapCoBung);
+                fragmentTransaction.commit();
+                break;
+            }
+            case "TẬP CHÂN": {
+                Fragment_BatDau_TapChan fragment_batDau_tapChan = new Fragment_BatDau_TapChan();
+                fragment_batDau_tapChan.setList(listBaiTap);
+                fragmentTransaction.add(R.id.fragBatDau, fragment_batDau_tapChan);
+                fragmentTransaction.commit();
+                break;
+            }
+            case "TẬP TAY": {
+                Fragment_BatDau_TapTay fragment_batDau_tapTay= new Fragment_BatDau_TapTay();
+                fragment_batDau_tapTay.setList(listBaiTap);
+                fragmentTransaction.add(R.id.fragBatDau, fragment_batDau_tapTay);
+                fragmentTransaction.commit();
+                break;
+            }
+        }
 
-        list = findViewById(R.id.listBaiTap);
-        list.setAdapter(bd);
 
         sw = (Switch) findViewById(R.id.switchNgauNhien);
         sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 Collections.shuffle(listBaiTap);
-                list = findViewById(R.id.listBaiTap);
-                list.setAdapter(bd);
+                batDauAdapter = new BatDauAdapter(listBaiTap);
             }
         });
     }
-
-        /*lvBatDau = (ListView) findViewById(R.id.listBaiTap);
-        list = new ArrayList<String>();
-        list.add("Bài 1");
-        list.add("Bài 2");
-        list.add("Bài 3");
-        list.add("Bài 4");
-        list.add("Bài 5");implements AdapterView.OnItemClickListener
-
-        ArrayAdapter <String> BatDauViewAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, list);
-        lvBatDau.setAdapter(BatDauViewAdapter);
-        lvBatDau.setOnItemClickListener(this);
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this, list.get(position),Toast.LENGTH_SHORT).show();
-    }*/
 }

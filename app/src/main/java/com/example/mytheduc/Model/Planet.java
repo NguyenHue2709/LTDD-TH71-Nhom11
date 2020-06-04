@@ -1,7 +1,7 @@
 package com.example.mytheduc.Model;
 
 public class Planet {
-    private String planetName;
+    public String planetName;
     private String dinhNghia;
     private int img;
 

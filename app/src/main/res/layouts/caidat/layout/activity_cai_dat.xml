@@ -27,7 +27,7 @@
             android:id="@+id/imgAcount"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="left"
             android:src="@drawable/ic_acount" />
 
         <LinearLayout
@@ -40,10 +40,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button_color"
-                android:text="Vòng lặp lại"
+                android:text="Lưu trữ dữ liệu"
                 android:textAllCaps="false"
                 android:paddingLeft="30dp"
-                android:gravity="bottom|left|center"
+                android:gravity="left|center"
                 android:textColor="#000000"
                 android:textSize="20dp" />
 
@@ -54,6 +54,7 @@
                 android:paddingLeft="30dp"
                 android:textSize="22dp"
                 tools:ignore="MissingConstraints" />
+
         </LinearLayout>
 
     </LinearLayout>
@@ -77,7 +78,7 @@
             android:id="@+id/imgReplay"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="left"
             android:src="@drawable/ic_replay" />
         <LinearLayout
             android:layout_width="match_parent"
@@ -92,7 +93,7 @@
                 android:text="Vòng lặp lại"
                 android:textAllCaps="false"
                 android:paddingLeft="30dp"
-                android:gravity="bottom|left|center"
+                android:gravity="left|center"
                 android:textColor="#000000"
                 android:textSize="20dp" />
 
@@ -117,7 +118,7 @@
             android:id="@+id/imgTime"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="left"
             android:src="@drawable/ic_time" />
         <LinearLayout
             android:layout_width="match_parent"
@@ -131,7 +132,7 @@
             android:text="Thời gian mỗi bài tập"
             android:textAllCaps="false"
             android:paddingLeft="30dp"
-            android:gravity="bottom|left|center"
+            android:gravity="left|center"
             android:textColor="#000000"
             android:textSize="20dp" />
         <TextView
@@ -153,7 +154,7 @@
             android:id="@+id/imgSafe"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="left"
             android:src="@drawable/ic_safe" />
 
         <LinearLayout
@@ -168,7 +169,7 @@
                 android:text="Đặt nghỉ ngơi"
                 android:textAllCaps="false"
                 android:paddingLeft="30dp"
-                android:gravity="bottom|left|center"
+                android:gravity="left|center"
                 android:textColor="#000000"
                 android:textSize="20dp" />
             <TextView
@@ -187,25 +188,26 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imgCount"
+            android:id="@+id/imgCountDown"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="left"
             android:src="@drawable/ic_countdown" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <Button
                 android:id="@+id/btn_DialogTimePicker3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button_color"
+                android:gravity="left|center"
+                android:paddingLeft="30dp"
                 android:text="Thời gian đếm ngược"
                 android:textAllCaps="false"
-                android:paddingLeft="30dp"
-                android:gravity="bottom|left|center"
                 android:textColor="#000000"
                 android:textSize="20dp" />
             <TextView
@@ -228,7 +230,7 @@
             android:id="@+id/imgVolume"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="center"
             android:src="@drawable/ic_volume" />
 
         <Switch
@@ -244,8 +246,8 @@
             android:textAllCaps="false"
             android:textColor="#373636"
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:thumb="@drawable/button_color" />
+            android:textStyle="bold" />
 
     </LinearLayout>
+
 </LinearLayout>

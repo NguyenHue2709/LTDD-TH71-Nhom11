@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,245 +7,394 @@
     android:orientation="vertical"
     tools:context=".Activity.CaiDatActivity">
 
-
-    <TextView
-        android:id="@+id/textview1"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="15dp"
-        android:text="TÀI KHOẢN"
-        android:gravity="left|center"
-        android:textColor="#08BC02"
-        android:textSize="25dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/imgAcount"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_acount" />
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/btn_Ac"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/button_color"
-                android:text="Vòng lặp lại"
-                android:textAllCaps="false"
-                android:paddingLeft="30dp"
-                android:gravity="bottom|left|center"
-                android:textColor="#000000"
-                android:textSize="20dp" />
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/txt_Ac"
+                android:id="@+id/textview1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="30dp"
-                android:textSize="22dp"
-                tools:ignore="MissingConstraints" />
-        </LinearLayout>
+                android:gravity="left|center"
+                android:paddingLeft="15dp"
+                android:text="TÀI KHOẢN"
+                android:textColor="#08BC02"
+                android:textSize="25dp" />
 
-    </LinearLayout>
-    <TextView
-        android:id="@+id/textview2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="15dp"
-        android:text="BÀI TẬP"
-        android:gravity="left|center"
-        android:textColor="#08BC02"
-        android:textSize="25dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgAcount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_acount" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btn_Ac"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/button_color"
+                        android:gravity="bottom|left|center"
+                        android:paddingLeft="30dp"
+                        android:text="Vòng lặp lại"
+                        android:textAllCaps="false"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/txt_Ac"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:textSize="22dp"
+                        tools:ignore="MissingConstraints" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/textview2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|center"
+                android:paddingLeft="15dp"
+                android:text="BÀI TẬP"
+                android:textColor="#08BC02"
+                android:textSize="25dp" />
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/imgReplay"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_replay" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/imgReplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_replay" />
 
-            <Button
-                android:id="@+id/btn_DialogNumberPicker"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btn_DialogNumberPicker"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/button_color"
+                        android:gravity="bottom|left|center"
+                        android:paddingLeft="30dp"
+                        android:text="Vòng lặp lại"
+                        android:textAllCaps="false"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/txt_Number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:textSize="15dp"
+                        tools:ignore="MissingConstraints" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_time" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btn_DialogTimePicker1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/button_color"
+                        android:gravity="bottom|left|center"
+                        android:paddingLeft="30dp"
+                        android:text="Thời gian mỗi bài tập"
+                        android:textAllCaps="false"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/txt_Time1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:textSize="15dp"
+                        tools:ignore="MissingConstraints" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgSafe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_safe" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btn_DialogTimePicker2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/button_color"
+                        android:gravity="bottom|left|center"
+                        android:paddingLeft="30dp"
+                        android:text="Đặt nghỉ ngơi"
+                        android:textAllCaps="false"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/txt_Time2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:textSize="15dp"
+                        tools:ignore="MissingConstraints" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_countdown" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btn_DialogTimePicker3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/button_color"
+                        android:gravity="bottom|left|center"
+                        android:paddingLeft="30dp"
+                        android:text="Thời gian đếm ngược"
+                        android:textAllCaps="false"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/txt_Time3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:textSize="15dp"
+                        tools:ignore="MissingConstraints" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/imgVolume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_volume" />
+
+                <Switch
+                android:id="@+id/switch_id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/button_color"
-                android:text="Vòng lặp lại"
-                android:textAllCaps="false"
+                android:layout_gravity="center"
                 android:paddingLeft="30dp"
-                android:gravity="bottom|left|center"
-                android:textColor="#000000"
-                android:textSize="20dp" />
+                android:paddingRight="30dp"
+                android:shadowColor="#FFFFFF"
+                android:switchMinWidth="50dp"
+                android:text="Âm thanh"
+                android:textAllCaps="false"
+                android:textColor="#373636"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:thumb="@drawable/button_color" />
 
+            </LinearLayout>
             <TextView
-                android:id="@+id/txt_Number"
+                android:id="@+id/textviewCaiDatChung"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="30dp"
-                android:textSize="15dp"
-                tools:ignore="MissingConstraints" />
-        </LinearLayout>
+                android:gravity="left|center"
+                android:paddingLeft="15dp"
+                android:text="CÀI ĐẶT CHUNG"
+                android:textColor="#08BC02"
+                android:textSize="25dp" />
 
-
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/imgTime"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_time" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-        <Button
-            android:id="@+id/btn_DialogTimePicker1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/button_color"
-            android:text="Thời gian mỗi bài tập"
-            android:textAllCaps="false"
-            android:paddingLeft="30dp"
-            android:gravity="bottom|left|center"
-            android:textColor="#000000"
-            android:textSize="20dp" />
-        <TextView
-            android:id="@+id/txt_Time1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="30dp"
-            android:textSize="15dp"
-            tools:ignore="MissingConstraints" />
-        </LinearLayout>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/imgSafe"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_safe" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <Button
-                android:id="@+id/btn_DialogTimePicker2"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/button_color"
-                android:text="Đặt nghỉ ngơi"
-                android:textAllCaps="false"
-                android:paddingLeft="30dp"
-                android:gravity="bottom|left|center"
-                android:textColor="#000000"
-                android:textSize="20dp" />
-            <TextView
-                android:id="@+id/txt_Time2"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgDuLieuSucKhoe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:padding="3dp"
+                    android:src="@drawable/ic_dulieusuckhoe" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btn_DuLieuSucKhoe"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/button_color"
+                        android:gravity="bottom|left|center"
+                        android:paddingLeft="30dp"
+                        android:text="Dữ liệu sức khỏe"
+                        android:textAllCaps="false"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/txt_DuLieuSucKhoe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:paddingLeft="30dp"
+                        android:textSize="22dp"
+                        tools:ignore="MissingConstraints" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="30dp"
-                android:textSize="15dp"
-                tools:ignore="MissingConstraints" />
+                android:layout_height="70dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgNhacTapMoiNgay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:padding="3dp"
+                    android:src="@drawable/ic_nhactapmoingay" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btn_NhacTapMoiNgay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/button_color"
+                        android:gravity="bottom|left|center"
+                        android:paddingLeft="30dp"
+                        android:text="Nhắc tôi tập mỗi ngày"
+                        android:textAllCaps="false"
+                        android:textColor="#000000"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/txt_NhacTapMoiNgay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:paddingLeft="30dp"
+                        android:textSize="22dp"
+                        tools:ignore="MissingConstraints" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgGiuManHinhBat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_phone" />
+
+                <Switch
+                    android:id="@+id/switch_GiuManHinhBat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:shadowColor="#FFFFFF"
+                    android:switchMinWidth="50dp"
+                    android:text="Giữ màn hình bật"
+                    android:textAllCaps="false"
+                    android:textColor="#373636"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:thumb="@drawable/button_color" />
+
+            </LinearLayout>
         </LinearLayout>
+    </ScrollView>
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal">
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ImageView
-            android:id="@+id/imgCount"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_countdown" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <Button
-                android:id="@+id/btn_DialogTimePicker3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/button_color"
-                android:text="Thời gian đếm ngược"
-                android:textAllCaps="false"
-                android:paddingLeft="30dp"
-                android:gravity="bottom|left|center"
-                android:textColor="#000000"
-                android:textSize="20dp" />
-            <TextView
-                android:id="@+id/txt_Time3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="30dp"
-                android:textSize="15dp"
-                tools:ignore="MissingConstraints" />
-        </LinearLayout>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal">
-
-
-        <ImageView
-            android:id="@+id/imgVolume"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_volume" />
-
-        <Switch
-            android:id="@+id/switch_id"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:shadowColor="#FFFFFF"
-            android:switchMinWidth="50dp"
-            android:text="Âm thanh"
-            android:textAllCaps="false"
-            android:textColor="#373636"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:thumb="@drawable/button_color" />
-
-    </LinearLayout>
-</LinearLayout>

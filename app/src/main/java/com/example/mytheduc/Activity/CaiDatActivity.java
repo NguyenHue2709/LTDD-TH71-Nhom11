@@ -5,15 +5,21 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -21,7 +27,14 @@ import android.widget.Toast;
 
 import com.example.mytheduc.R;
 
+import java.net.ConnectException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public  class CaiDatActivity extends AppCompatActivity {
+
+     Button btnAlertDialog;
+     TextView txtAc;
 
      Button nPRelay;
      TextView NumberRelay;
@@ -48,36 +61,49 @@ public  class CaiDatActivity extends AppCompatActivity {
         actionBar.setTitle("Cài đặt");
 
 
+        btnAlertDialog = (Button) findViewById(R.id.btn_Ac);
+        txtAc = (TextView) findViewById(R.id.txt_Ac);
+        btnAlertDialog.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                displayAlertDialog();
+            }
+        });
+
         nPRelay = (Button) findViewById(R.id.btn_DialogNumberPicker);
         NumberRelay = (TextView) findViewById(R.id.txt_Number);
-        NumberRelay.setText("1 lần");
+        NumberRelay.setText("1");
         nPRelay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 numberPickerDialog();
             }
         });
+
         npTime = (Button) findViewById(R.id.btn_DialogTimePicker1);
         NumberTime = (TextView) findViewById(R.id.txt_Time1);
-        NumberTime.setText("10 giây");
+        NumberTime.setText("10");
         npTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 timePickerDialog1();
             }
         });
+
         nPSafe = (Button) findViewById(R.id.btn_DialogTimePicker2);
         NumberSafe = (TextView) findViewById(R.id.txt_Time2);
-        NumberSafe.setText("5 giây");
+        NumberSafe.setText("5");
         nPSafe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 timePickerDialog2();
             }
         });
+
         nPCountDown = (Button) findViewById(R.id.btn_DialogTimePicker3);
         NumberCountDown = (TextView) findViewById(R.id.txt_Time3);
-        NumberCountDown.setText("10 giây");
+        NumberCountDown.setText("10");
         nPCountDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,6 +135,54 @@ public  class CaiDatActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void displayAlertDialog() {
+        LayoutInflater inflater = getLayoutInflater();
+        View alertLayout = inflater.inflate(R.layout.layout_custom_dialog, null);
+        final EditText etUsername = (EditText) alertLayout.findViewById(R.id.et_Username);
+        final EditText etPassword = (EditText) alertLayout.findViewById(R.id.et_Password);
+        final CheckBox cbShowPassword = (CheckBox) alertLayout.findViewById(R.id.cb_ShowPassword);
+
+        cbShowPassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(etUsername.getText().equals("123456")&& etPassword.getText().equals("123456")){
+                    Toast.makeText(getBaseContext(), "Đăng nhập thành công", Toast.LENGTH_LONG).show();
+                    finish();
+                }
+                else
+                    Toast.makeText(getBaseContext(), "Đăng nhập không thành công", Toast.LENGTH_LONG).show();
+            }
+
+        });
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Login");
+        builder.setView(alertLayout);
+        builder.setCancelable(false);
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getBaseContext(), "Cancel clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.setPositiveButton("Login", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // code for matching password
+                String user = etUsername.getText().toString();
+                String pass = etPassword.getText().toString();
+                Toast.makeText(getBaseContext(), "Username: " + user + " Password: " + pass, Toast.LENGTH_SHORT).show();
+                txtAc.setText(etUsername.getText().toString());
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
     private void numberPickerDialog() {
         NumberPicker myNumberPicker = new NumberPicker(this);
         myNumberPicker.setMaxValue(6);
@@ -117,7 +191,7 @@ public  class CaiDatActivity extends AppCompatActivity {
         myNumberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal){
-                NumberRelay.setText("" + newVal + " lần");
+                NumberRelay.setText(""+ newVal);
             }
         });
         AlertDialog.Builder builder = new AlertDialog.Builder(this).setView(myNumberPicker);
@@ -141,7 +215,7 @@ public  class CaiDatActivity extends AppCompatActivity {
         NumberPicker.OnValueChangeListener myValueChangeListener = new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                NumberTime.setText("" + newVal + "  giây");
+                NumberTime.setText("" + newVal );
             }
         };
         myNumberPicker.setOnValueChangedListener(myValueChangeListener);
@@ -158,6 +232,7 @@ public  class CaiDatActivity extends AppCompatActivity {
     }
 
     private void timePickerDialog2() {
+
         NumberPicker myNumberPicker = new NumberPicker(this);
         myNumberPicker.setMaxValue(30);
         myNumberPicker.setMinValue(5);
@@ -165,7 +240,7 @@ public  class CaiDatActivity extends AppCompatActivity {
         NumberPicker.OnValueChangeListener myValueChangeListener = new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                NumberSafe.setText("" + newVal + "  giây");
+                NumberSafe.setText("" + newVal );
             }
         };
         myNumberPicker.setOnValueChangedListener(myValueChangeListener);
@@ -174,7 +249,7 @@ public  class CaiDatActivity extends AppCompatActivity {
         builder.setPositiveButton("Đặt", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
+                
             }
         });
         builder.show();
@@ -189,7 +264,7 @@ public  class CaiDatActivity extends AppCompatActivity {
         NumberPicker.OnValueChangeListener myValueChangeListener = new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                NumberCountDown.setText("" + newVal + "  giây");
+                NumberCountDown.setText("" + newVal );
             }
         };
         myNumberPicker.setOnValueChangedListener(myValueChangeListener);

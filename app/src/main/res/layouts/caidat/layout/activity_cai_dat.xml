@@ -20,17 +20,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/textview1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="left|center"
                 android:paddingLeft="15dp"
                 android:text="TÀI KHOẢN"
-                android:textColor="#08BC02"
-                android:textSize="25dp" />
-
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp" />
+        </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
@@ -40,7 +44,7 @@
                     android:id="@+id/imgAcount"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="top"
                     android:src="@drawable/ic_acount" />
 
                 <LinearLayout
@@ -53,9 +57,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/button_color"
-                        android:gravity="bottom|left|center"
-                        android:paddingLeft="30dp"
-                        android:text="Vòng lặp lại"
+                        android:gravity="left|center"
+                        android:paddingLeft="15dp"
+                        android:text="Lưu trữ dữ liệu"
                         android:textAllCaps="false"
                         android:textColor="#000000"
                         android:textSize="20dp" />
@@ -65,20 +69,28 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
-                        android:textSize="22dp"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="#FF5722"
                         tools:ignore="MissingConstraints" />
                 </LinearLayout>
 
             </LinearLayout>
-            <TextView
-                android:id="@+id/textview2"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left|center"
-                android:paddingLeft="15dp"
-                android:text="BÀI TẬP"
-                android:textColor="#08BC02"
-                android:textSize="25dp" />
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left|center"
+                    android:paddingLeft="15dp"
+                    android:text="BÀI TẬP"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20dp" />
+            </LinearLayout>
 
 
             <LinearLayout
@@ -90,7 +102,7 @@
                     android:id="@+id/imgReplay"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="top"
                     android:src="@drawable/ic_replay" />
 
                 <LinearLayout
@@ -103,8 +115,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/button_color"
-                        android:gravity="bottom|left|center"
-                        android:paddingLeft="30dp"
+                        android:gravity="left|center"
+                        android:paddingLeft="15dp"
                         android:text="Vòng lặp lại"
                         android:textAllCaps="false"
                         android:textColor="#000000"
@@ -117,6 +129,8 @@
                         android:paddingLeft="30dp"
                         android:textSize="15dp"
                         tools:ignore="MissingConstraints" />
+
+
                 </LinearLayout>
 
 
@@ -131,7 +145,7 @@
                     android:id="@+id/imgTime"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="top"
                     android:src="@drawable/ic_time" />
 
                 <LinearLayout
@@ -144,8 +158,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/button_color"
-                        android:gravity="bottom|left|center"
-                        android:paddingLeft="30dp"
+                        android:gravity="left|center"
+                        android:paddingLeft="15dp"
                         android:text="Thời gian mỗi bài tập"
                         android:textAllCaps="false"
                         android:textColor="#000000"
@@ -171,7 +185,7 @@
                     android:id="@+id/imgSafe"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="top"
                     android:src="@drawable/ic_safe" />
 
                 <LinearLayout
@@ -184,8 +198,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/button_color"
-                        android:gravity="bottom|left|center"
-                        android:paddingLeft="30dp"
+                        android:gravity="left|center"
+                        android:paddingLeft="15dp"
                         android:text="Đặt nghỉ ngơi"
                         android:textAllCaps="false"
                         android:textColor="#000000"
@@ -211,7 +225,7 @@
                     android:id="@+id/imgCount"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="top"
                     android:src="@drawable/ic_countdown" />
 
                 <LinearLayout
@@ -224,8 +238,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/button_color"
-                        android:gravity="bottom|left|center"
-                        android:paddingLeft="30dp"
+                        android:gravity="left|center"
+                        android:paddingLeft="15dp"
                         android:text="Thời gian đếm ngược"
                         android:textAllCaps="false"
                         android:textColor="#000000"
@@ -244,7 +258,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal">
 
 
@@ -252,35 +266,37 @@
                     android:id="@+id/imgVolume"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center"
                     android:src="@drawable/ic_volume" />
 
                 <Switch
-                android:id="@+id/switch_id"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:paddingLeft="30dp"
-                android:paddingRight="30dp"
-                android:shadowColor="#FFFFFF"
-                android:switchMinWidth="50dp"
-                android:text="Âm thanh"
-                android:textAllCaps="false"
-                android:textColor="#373636"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:thumb="@drawable/button_color" />
-
+                    android:id="@+id/switch_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="30dp"
+                    android:switchMinWidth="60dp"
+                    android:text="Âm thanh"
+                    android:textColor="#373636"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
             </LinearLayout>
-            <TextView
-                android:id="@+id/textviewCaiDatChung"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left|center"
-                android:paddingLeft="15dp"
-                android:text="CÀI ĐẶT CHUNG"
-                android:textColor="#08BC02"
-                android:textSize="25dp" />
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textview3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left|center"
+                    android:paddingLeft="15dp"
+                    android:text="CÀI ĐẶT CHUNG"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20dp" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -291,7 +307,7 @@
                     android:id="@+id/imgDuLieuSucKhoe"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="top"
                     android:padding="3dp"
                     android:src="@drawable/ic_dulieusuckhoe" />
 
@@ -305,8 +321,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/button_color"
-                        android:gravity="bottom|left|center"
-                        android:paddingLeft="30dp"
+                        android:gravity="left|center"
+                        android:paddingLeft="15dp"
                         android:text="Dữ liệu sức khỏe"
                         android:textAllCaps="false"
                         android:textColor="#000000"
@@ -333,7 +349,7 @@
                     android:id="@+id/imgNhacTapMoiNgay"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="top"
                     android:padding="3dp"
                     android:src="@drawable/ic_nhactapmoingay" />
 
@@ -347,8 +363,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/button_color"
-                        android:gravity="bottom|left|center"
-                        android:paddingLeft="30dp"
+                        android:gravity="left|center"
+                        android:paddingLeft="15dp"
                         android:text="Nhắc tôi tập mỗi ngày"
                         android:textAllCaps="false"
                         android:textColor="#000000"
@@ -367,14 +383,14 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/imgGiuManHinhBat"
-                    android:layout_width="wrap_content"
+                    android:layout_width="78dp"
                     android:layout_height="50dp"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center"
                     android:src="@drawable/ic_phone" />
 
                 <Switch
@@ -382,27 +398,31 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:paddingLeft="30dp"
+                    android:paddingLeft="15dp"
                     android:paddingRight="30dp"
                     android:shadowColor="#FFFFFF"
-                    android:switchMinWidth="50dp"
+                    android:switchMinWidth="60dp"
                     android:text="Giữ màn hình bật"
                     android:textAllCaps="false"
                     android:textColor="#373636"
                     android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:thumb="@drawable/button_color" />
-
+                    android:textStyle="bold"/>
             </LinearLayout>
-            <TextView
-                android:id="@+id/textviewCongDong"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left|center"
-                android:paddingLeft="15dp"
-                android:text="CỘNG ĐỒNG"
-                android:textColor="#08BC02"
-                android:textSize="25dp" />
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textview4"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="left|center"
+                    android:paddingLeft="15dp"
+                    android:text="CỘNG ĐỒNG"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20dp" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -413,7 +433,7 @@
                     android:id="@+id/imgDienDan"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="top"
                     android:padding="3dp"
                     android:src="@drawable/ic_congdong" />
 
@@ -427,7 +447,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/button_color"
-                        android:gravity="bottom|left|center"
+                        android:gravity="left|center"
                         android:paddingLeft="30dp"
                         android:text="Diễn đàn"
                         android:textAllCaps="false"

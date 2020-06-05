@@ -49,5 +49,9 @@ public class Fragment_Chan extends Fragment {
         chanPlanetArrayList.add(new ChanPlanet("2. NẰM NGHIÊNG XOAY CHÂN", R.drawable.xoaychan,"Nằm ngiêng bên trái, đầu kê vào tay trái. Sau đó nhắc chân phải và xoay vòng tròn bàn chân.lặp lại bài tập này 10-15 lần một lượt"));
         chanPlanetArrayList.add(new ChanPlanet("3. CHÙNG CHÂN NGANG", R.drawable.chungchanngang,"Đứng thẳng hai chân kề gần nhau. Đưa chân phải sang bên rồi hạ thấp thân xuống trong khi giũ thăng bằng chân trái. Trở lại tư thế bắt đầu và đổi bên. Lặp lại bài tập này từ 10-15 lần cho một lượt"));
         chanPlanetArrayList.add(new ChanPlanet("4. BƯỚC CHÙNG GỐI", R.drawable.buocchunggoi,"Đứng thẳng người. Sau đó chân trái bước ra sau và hạ người xuống. Khi đub=ngứ lên, nâng gối trái càng cao càng tốt. Trở lại tư thế bắt đầu. Lặp lại bài tập này tù 10-15 lần cho một lượt"));
+        chanPlanetArrayList.add(new ChanPlanet("5 CHÙNG CHÂN CHÉO",R.drawable.chungchancheo,"Dứng thẳng. Rồi lùi ra sau với chân trái để sang phải, đồng thời cong gối. Trở lại tư thế bắt đầu và đổi bên. Lặp lại bài tập này từ 10-15 lần cho một lượt."));
+        chanPlanetArrayList.add(new ChanPlanet("6. NÂNG BĂP CHÂN PHẢI Ở DƯỚI", R.drawable.nangbapchan,"nằm nghiêng bên phải, đầu tựa vào tay phải. Sau đó để chân trái thẳng trên sàn. Nhấn chân phải lên rồi hạ xuống. lặp lại bài tập này từ 10-15 lần cho một lượt"));
+        chanPlanetArrayList.add(new ChanPlanet("7. NÂNG BẮP CHÂN TRÁI Ở DƯỚI" ,R.drawable.nangbapchan,"Nằm nghiêng bên trái, đầu tựa vào tay phải. Sau đó để chân trái thẳng trên sàn. Nhấc chân phải lên rồi hạ xuống. lặp lại bài tậ này từ 10-15 lần cho một lượt."));
+        chanPlanetArrayList.add(new ChanPlanet("8. CHÙNG CHÂN RA SAU ĐA CHÂN TRÁI LÊN TRƯỚC",R.drawable.chanchanda,"Đứng thảng người. chân trái bước ra sau và hạ thân người xuống. Khi đứng lên, đá chân trái lên trên. Trở lại tư thế bắt đầu và lặp lại bài tập này từ 10-15 lần cho một lượt "));
     }
 }

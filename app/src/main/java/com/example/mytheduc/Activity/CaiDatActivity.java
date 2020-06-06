@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import androidx.fragment.app.DialogFragment;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.wifi.p2p.WifiP2pManager;
@@ -25,15 +27,16 @@ import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
-
+import com.example.mytheduc.Fragment.Fragment_TimePickerNhacNho;
 import com.example.mytheduc.R;
 
 import java.net.ConnectException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public  class CaiDatActivity extends AppCompatActivity {
+public  class CaiDatActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener{
 
      Button btnAlertDialog;
      TextView txtAc;
@@ -55,7 +58,7 @@ public  class CaiDatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cai_dat);
-
+        /*Thanh Tiêu đề*/
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -64,7 +67,6 @@ public  class CaiDatActivity extends AppCompatActivity {
         btnAlertDialog = (Button) findViewById(R.id.btn_Ac);
         txtAc = (TextView) findViewById(R.id.txt_Ac);
         btnAlertDialog.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 displayAlertDialog();
@@ -111,7 +113,7 @@ public  class CaiDatActivity extends AppCompatActivity {
             }
         });
 
-        /*Switch Nhắc tập mỗi ngày*/
+        /* Switch Nhắc tập mỗi ngày */
         final LinearLayout ll = (LinearLayout) findViewById(R.id.llNhacTapMoiNgay);
         final Switch sh = (Switch) findViewById(R.id.switch_NhacTapMoiNgay);
         sh.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -129,12 +131,15 @@ public  class CaiDatActivity extends AppCompatActivity {
                 }
             }
         });
-
-    }
-
-    public void openNhacTapMoiNgay(){
-        Intent intt_NhacTap = new Intent(this, NhacTapMoiNgay.class);
-        startActivity(intt_NhacTap);
+        /* Mở đồng hồ thiết lập lặp lại */
+        Button btn_Nhacnho = (Button) findViewById(R.id.btn_NhacTapThoiGian);
+        btn_Nhacnho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment timepickerNhacNho = new Fragment_TimePickerNhacNho();
+                timepickerNhacNho.show(getSupportFragmentManager(), "time picker");
+            }
+        });
     }
 
     @Override
@@ -290,4 +295,12 @@ public  class CaiDatActivity extends AppCompatActivity {
         builder.show();
 
     }
+
+    /* Gán giờ vào textview tại mục Lặp lại*/
+    @Override
+    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        TextView txtv = (TextView) findViewById(R.id.txtNhacTapThoiGian);
+        txtv.setText(hourOfDay + ":" + minute);
+    }
+
 }

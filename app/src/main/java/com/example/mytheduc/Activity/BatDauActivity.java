@@ -54,7 +54,6 @@ public class BatDauActivity extends AppCompatActivity {
                         }
                         progressBar.setProgress(current + 10);
                     }
-
                     @Override
                     public void onFinish() {
 

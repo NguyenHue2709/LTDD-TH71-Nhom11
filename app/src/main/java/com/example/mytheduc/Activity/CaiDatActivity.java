@@ -112,13 +112,13 @@ public  class CaiDatActivity extends AppCompatActivity {
         });
 
 
-        btn_nhactap = (Button) findViewById(R.id.btn_NhacTapMoiNgay);
+        /*btn_nhactap = (Button) findViewById(R.id.btn_NhacTapMoiNgay);
         btn_nhactap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openNhacTapMoiNgay();
             }
-        });
+        });*/
     }
 
     public void openNhacTapMoiNgay(){

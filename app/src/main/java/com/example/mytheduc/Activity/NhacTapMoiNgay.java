@@ -15,18 +15,14 @@ import android.widget.TimePicker;
 import com.example.mytheduc.Fragment.Fragment_TimePickerNhacNho;
 import com.example.mytheduc.R;
 
-public class NhacTapMoiNgay extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
-
+public class NhacTapMoiNgay extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener
+{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nhac_tap_moi_ngay);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle("Nhắc nhở");
+        setContentView(R.layout.activity_cai_dat);
 
-        Button btn_Nhacnho = (Button) findViewById(R.id.btn_timepickernhacnho);
+        Button btn_Nhacnho = (Button) findViewById(R.id.btn_NhacTapThoiGian);
         btn_Nhacnho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,7 +34,7 @@ public class NhacTapMoiNgay extends AppCompatActivity implements TimePickerDialo
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        TextView txtv = (TextView) findViewById(R.id.txt_timepickernhacnho);
+        TextView txtv = (TextView) findViewById(R.id.txtNhacTapThoiGian);
         txtv.setText(hourOfDay + ":" + minute);
     }
 

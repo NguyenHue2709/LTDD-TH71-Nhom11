@@ -3,6 +3,7 @@ package com.example.mytheduc.Activity;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import android.app.Activity;
 import androidx.appcompat.widget.SwitchCompat;
 
 import android.content.Context;
@@ -20,6 +21,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -48,7 +50,6 @@ public  class CaiDatActivity extends AppCompatActivity {
      Button nPCountDown;
      TextView NumberCountDown;
 
-    private Button btn_nhactap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +60,6 @@ public  class CaiDatActivity extends AppCompatActivity {
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("Cài đặt");
-
 
         btnAlertDialog = (Button) findViewById(R.id.btn_Ac);
         txtAc = (TextView) findViewById(R.id.txt_Ac);
@@ -111,14 +111,25 @@ public  class CaiDatActivity extends AppCompatActivity {
             }
         });
 
-
-        /*btn_nhactap = (Button) findViewById(R.id.btn_NhacTapMoiNgay);
-        btn_nhactap.setOnClickListener(new View.OnClickListener() {
+        /*Switch Nhắc tập mỗi ngày*/
+        final LinearLayout ll = (LinearLayout) findViewById(R.id.llNhacTapMoiNgay);
+        final Switch sh = (Switch) findViewById(R.id.switch_NhacTapMoiNgay);
+        sh.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                openNhacTapMoiNgay();
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(sh.isChecked())
+                {
+                    sh.setVisibility(View.VISIBLE);
+                    ll.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    sh.setVisibility(View.VISIBLE);
+                    ll.setVisibility(View.GONE);
+                }
             }
-        });*/
+        });
+
     }
 
     public void openNhacTapMoiNgay(){

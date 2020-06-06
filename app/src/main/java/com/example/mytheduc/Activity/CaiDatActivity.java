@@ -164,12 +164,10 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(etUsername.getText().equals("123456")&& etPassword.getText().equals("123456")){
-                    Toast.makeText(getBaseContext(), "Đăng nhập thành công", Toast.LENGTH_LONG).show();
-                    finish();
-                }
+                if (isChecked)
+                    etPassword.setTransformationMethod(null);
                 else
-                    Toast.makeText(getBaseContext(), "Đăng nhập không thành công", Toast.LENGTH_LONG).show();
+                    etPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
             }
 
         });

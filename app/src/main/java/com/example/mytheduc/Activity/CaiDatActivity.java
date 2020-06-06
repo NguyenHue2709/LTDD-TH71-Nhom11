@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -36,8 +37,9 @@ import java.net.ConnectException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public  class CaiDatActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener{
+public  class CaiDatActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, NumberPicker.OnValueChangeListener {
 
+    static Dialog d ;
      Button btnAlertDialog;
      TextView txtAc;
 
@@ -75,7 +77,7 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
 
         nPRelay = (Button) findViewById(R.id.btn_DialogNumberPicker);
         NumberRelay = (TextView) findViewById(R.id.txt_Number);
-        NumberRelay.setText("1");
+        NumberRelay.setText("1 lần");
         nPRelay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,7 +87,7 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
 
         npTime = (Button) findViewById(R.id.btn_DialogTimePicker1);
         NumberTime = (TextView) findViewById(R.id.txt_Time1);
-        NumberTime.setText("10");
+        NumberTime.setText("10 giây");
         npTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,7 +97,7 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
 
         nPSafe = (Button) findViewById(R.id.btn_DialogTimePicker2);
         NumberSafe = (TextView) findViewById(R.id.txt_Time2);
-        NumberSafe.setText("5");
+        NumberSafe.setText("5 giây");
         nPSafe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,7 +107,7 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
 
         nPCountDown = (Button) findViewById(R.id.btn_DialogTimePicker3);
         NumberCountDown = (TextView) findViewById(R.id.txt_Time3);
-        NumberCountDown.setText("10");
+        NumberCountDown.setText("10 giây");
         nPCountDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -198,101 +200,125 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+    @Override
+    public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
 
+        Log.i("value is",""+newVal);
+
+    }
     private void numberPickerDialog() {
-        NumberPicker myNumberPicker = new NumberPicker(this);
-        myNumberPicker.setMaxValue(6);
-        myNumberPicker.setMinValue(1);
-        myNumberPicker.setWrapSelectorWheel(false);
-        myNumberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+        final Dialog d = new Dialog(this);
+        d.setContentView(R.layout.dialog1);
+        Button b1 = (Button) d.findViewById(R.id.button1);
+        Button b2 = (Button) d.findViewById(R.id.button2);
+        final NumberPicker np = (NumberPicker) d.findViewById(R.id.numberPicker1);
+        np.setMaxValue(6);
+        np.setMinValue(1);
+        np.setWrapSelectorWheel(false);
+        np.setOnValueChangedListener(this);
+        b1.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal){
-                NumberRelay.setText(""+ newVal);
+            public void onClick(View v) {
+                NumberRelay.setText(String.valueOf(np.getValue()) + " lần"); //set the value to textview
+                d.dismiss();
             }
         });
-        AlertDialog.Builder builder = new AlertDialog.Builder(this).setView(myNumberPicker);
-        builder.setTitle("Đặt số lần (1 -> 6 lần)");
-        builder.setPositiveButton("Đặt", new DialogInterface.OnClickListener() {
+        b2.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
+            public void onClick(View v) {
+                d.dismiss(); // dismiss the dialog
             }
         });
-        builder.show();
+        d.show();
 
     }
 
-
     private void timePickerDialog1() {
-        NumberPicker myNumberPicker = new NumberPicker(this);
-        myNumberPicker.setMaxValue(60);
-        myNumberPicker.setMinValue(10);
-        myNumberPicker.setWrapSelectorWheel(false);
-        NumberPicker.OnValueChangeListener myValueChangeListener = new NumberPicker.OnValueChangeListener() {
+        final Dialog d = new Dialog(this);
+        d.setContentView(R.layout.dialog2);
+        Button b1 = (Button) d.findViewById(R.id.button1);
+        Button b2 = (Button) d.findViewById(R.id.button2);
+        final NumberPicker np = (NumberPicker) d.findViewById(R.id.numberPicker1);
+        np.setMaxValue(60);
+        np.setMinValue(10);
+        np.setWrapSelectorWheel(false);
+        np.setOnValueChangedListener(this);
+        b1.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                NumberTime.setText("" + newVal );
-            }
-        };
-        myNumberPicker.setOnValueChangedListener(myValueChangeListener);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this).setView(myNumberPicker);
-        builder.setTitle("Đặt thời lượng (10 -> 60 giây)");
-        builder.setPositiveButton("Đặt", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
+            public void onClick(View v) {
+                NumberTime.setText(String.valueOf(np.getValue()) + " giây"); //set the value to textview
+                d.dismiss();
             }
         });
-        builder.show();
+        b2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                d.dismiss(); // dismiss the dialog
+            }
+        });
+        d.show();
 
     }
 
     private void timePickerDialog2() {
-
-        NumberPicker myNumberPicker = new NumberPicker(this);
-        myNumberPicker.setMaxValue(30);
-        myNumberPicker.setMinValue(5);
-        myNumberPicker.setWrapSelectorWheel(false);
-        NumberPicker.OnValueChangeListener myValueChangeListener = new NumberPicker.OnValueChangeListener() {
+        final Dialog d = new Dialog(this);
+        d.setContentView(R.layout.dialog3);
+        Button b1 = (Button) d.findViewById(R.id.button1);
+        Button b2 = (Button) d.findViewById(R.id.button2);
+        final NumberPicker np = (NumberPicker) d.findViewById(R.id.numberPicker1);
+        np.setMaxValue(30);
+        np.setMinValue(5);
+        np.setWrapSelectorWheel(false);
+        np.setOnValueChangedListener(this);
+        b1.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                NumberSafe.setText("" + newVal );
-            }
-        };
-        myNumberPicker.setOnValueChangedListener(myValueChangeListener);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this).setView(myNumberPicker);
-        builder.setTitle("Đặt thời lượng (5 -> 30 giây)");
-        builder.setPositiveButton("Đặt", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                
+            public void onClick(View v) {
+                NumberSafe.setText(String.valueOf(np.getValue()) + " giây"); //set the value to textview
+                d.dismiss();
             }
         });
-        builder.show();
+        b2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                d.dismiss(); // dismiss the dialog
+            }
+        });
+        d.show();
 
     }
 
     public void timePickerDialog3() {
-        NumberPicker myNumberPicker = new NumberPicker(this);
-        myNumberPicker.setMaxValue(15);
-        myNumberPicker.setMinValue(10);
-        myNumberPicker.setWrapSelectorWheel(false);
-        NumberPicker.OnValueChangeListener myValueChangeListener = new NumberPicker.OnValueChangeListener() {
+        final Dialog d = new Dialog(this);
+        d.setContentView(R.layout.dialog4);
+        Button b1 = (Button) d.findViewById(R.id.button1);
+        Button b2 = (Button) d.findViewById(R.id.button2);
+        final NumberPicker np = (NumberPicker) d.findViewById(R.id.numberPicker1);
+        np.setMaxValue(15);
+        np.setMinValue(10);
+        np.setWrapSelectorWheel(false);
+        np.setOnValueChangedListener(this);
+        b1.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                NumberCountDown.setText("" + newVal );
-            }
-        };
-        myNumberPicker.setOnValueChangedListener(myValueChangeListener);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this).setView(myNumberPicker);
-        builder.setTitle("Đặt thời lượng (10 -> 15 giây)");
-        builder.setPositiveButton("Đặt", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
+            public void onClick(View v) {
+                NumberCountDown.setText(String.valueOf(np.getValue()) + " giây"); //set the value to textview
+                d.dismiss();
             }
         });
-        builder.show();
+        b2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                d.dismiss(); // dismiss the dialog
+            }
+        });
+        d.show();
 
     }
 
@@ -303,4 +329,8 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
         txtv.setText(hourOfDay + ":" + minute);
     }
 
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
 }

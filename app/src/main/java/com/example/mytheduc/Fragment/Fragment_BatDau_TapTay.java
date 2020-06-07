@@ -34,16 +34,14 @@ public class Fragment_BatDau_TapTay extends Fragment {
     }
 
     public void setList (ArrayList arr) {
-        arr.add(new BatDau_Model("CHỐNG ĐẨY"));
+        arr.add(new BatDau_Model("XOAY TAY"));
         arr.add(new BatDau_Model("TẬP CƠ TAY SAU TRÊN GHẾ"));
+        arr.add(new BatDau_Model("CHỐNG ĐẨY TAY HÌNH KIM CƯƠNG"));
+        arr.add(new BatDau_Model("CHỐNG ĐẨY MỘT CHÂN"));
+        arr.add(new BatDau_Model("CHỐNG ĐẨY"));
         arr.add(new BatDau_Model("ĐẤM"));
         arr.add(new BatDau_Model("PLANK LÊN VÀ XUỐNG"));
         arr.add(new BatDau_Model("CĂNG VAI"));
-        arr.add(new BatDau_Model("XOAY TAY"));
-        arr.add(new BatDau_Model("CHỐNG ĐẨY NGƯỢC"));
-        arr.add(new BatDau_Model("CHỐNG ĐẨY MỘT CHÂN"));
-        arr.add(new BatDau_Model("HÍT ĐẤT VỖ VAI"));
-        arr.add(new BatDau_Model("CĂNG CƠ TAY TRÁI"));
     }
 
 }

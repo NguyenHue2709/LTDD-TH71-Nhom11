@@ -123,12 +123,13 @@
                         android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/txt_Number"
+                        android:id="@+id/txt_Laplai"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
                         android:textSize="15dp"
-                        tools:ignore="MissingConstraints" />
+                        tools:ignore="MissingConstraints"
+                        android:text="1"/>
 
 
                 </LinearLayout>
@@ -166,12 +167,13 @@
                         android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/txt_Time1"
+                        android:id="@+id/txt_MoiBaiTap"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
                         android:textSize="15dp"
-                        tools:ignore="MissingConstraints" />
+                        tools:ignore="MissingConstraints"
+                        android:text="20"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -206,12 +208,13 @@
                         android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/txt_Time2"
+                        android:id="@+id/txt_NghiNgoi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
                         android:textSize="15dp"
-                        tools:ignore="MissingConstraints" />
+                        tools:ignore="MissingConstraints"
+                        android:text="10"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -246,12 +249,13 @@
                         android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/txt_Time3"
+                        android:id="@+id/txt_DemNguoc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
                         android:textSize="15dp"
-                        tools:ignore="MissingConstraints" />
+                        tools:ignore="MissingConstraints"
+                        android:text="10"/>
                 </LinearLayout>
 
             </LinearLayout>

@@ -35,15 +35,13 @@ public class Fragment_BatDau_TapChan extends Fragment {
 
     public void setList (ArrayList arr) {
         arr.add(new BatDau_Model("NÂNG BẮP CHÂN"));
-        arr.add(new BatDau_Model("CHÙNG CHÂN CHÉO"));
+        arr.add(new BatDau_Model("NẰM NGHIÊNG XOAY CHÂN"));
         arr.add(new BatDau_Model("CHÙNG CHÂN NGANG"));
-        arr.add(new BatDau_Model("BƯỚC CHÙNG GỐI TRÁI"));
+        arr.add(new BatDau_Model("BƯỚC CHÙNG GỐI"));
+        arr.add(new BatDau_Model("CHÙNG CHÂN CHÉO"));
         arr.add(new BatDau_Model("NÂNG BẤP CHÂN PHẢI Ở DƯỚI"));
         arr.add(new BatDau_Model("NÂNG BẤP CHÂN TRÁI Ở DƯỚI"));
-        arr.add(new BatDau_Model("BƯỚC CHÙNG GỐI TRÁI"));
-        arr.add(new BatDau_Model("NẰM NGHIÊNG XOAY CHÂN TRÁI"));
-        arr.add(new BatDau_Model("NẰM NGHIÊNG XOAY CHÂN PHẢI"));
-        arr.add(new BatDau_Model("NÂNG BẮP CHÂN TRÁI"));
+        arr.add(new BatDau_Model("CHÙNG CHÂN SAU"));
     }
 
 }

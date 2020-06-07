@@ -38,15 +38,18 @@ public  class CaiDatActivity extends AppCompatActivity {
 
      Button nPRelay;
      TextView NumberRelay;
-
+     public long soLapLai;
      Button npTime;
      TextView NumberTime;
+     public long timeMoiBaiTap;
 
      Button nPSafe;
      TextView NumberSafe;
+     public long timeNghiNgoi;
 
      Button nPCountDown;
      TextView NumberCountDown;
+    public long timeDemNguoc;
 
     private Button btn_nhactap;
 
@@ -72,44 +75,48 @@ public  class CaiDatActivity extends AppCompatActivity {
         });
 
         nPRelay = (Button) findViewById(R.id.btn_DialogNumberPicker);
-        NumberRelay = (TextView) findViewById(R.id.txt_Number);
-        NumberRelay.setText("1");
+        NumberRelay = (TextView) findViewById(R.id.txt_Laplai);
+        //NumberRelay.setText("1");
         nPRelay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 numberPickerDialog();
             }
         });
+        soLapLai = Long.parseLong(NumberRelay.getText().toString());
 
         npTime = (Button) findViewById(R.id.btn_DialogTimePicker1);
-        NumberTime = (TextView) findViewById(R.id.txt_Time1);
-        NumberTime.setText("10");
+        NumberTime = (TextView) findViewById(R.id.txt_MoiBaiTap);
+        //NumberTime.setText("10");
         npTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 timePickerDialog1();
             }
         });
+        timeMoiBaiTap = Long.parseLong(NumberTime.getText().toString());
 
         nPSafe = (Button) findViewById(R.id.btn_DialogTimePicker2);
-        NumberSafe = (TextView) findViewById(R.id.txt_Time2);
-        NumberSafe.setText("5");
+        NumberSafe = (TextView) findViewById(R.id.txt_NghiNgoi);
+        //NumberSafe.setText("5");
         nPSafe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 timePickerDialog2();
             }
         });
+        timeNghiNgoi = Long.parseLong(NumberSafe.getText().toString());
 
         nPCountDown = (Button) findViewById(R.id.btn_DialogTimePicker3);
-        NumberCountDown = (TextView) findViewById(R.id.txt_Time3);
-        NumberCountDown.setText("10");
+        NumberCountDown = (TextView) findViewById(R.id.txt_DemNguoc);
+        //NumberCountDown.setText("10");
         nPCountDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 timePickerDialog3();
             }
         });
+        timeDemNguoc = Long.parseLong(NumberCountDown.getText().toString());
 
 
         btn_nhactap = (Button) findViewById(R.id.btn_NhacTapMoiNgay);

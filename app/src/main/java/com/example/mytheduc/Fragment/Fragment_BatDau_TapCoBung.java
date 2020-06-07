@@ -36,14 +36,12 @@ public class Fragment_BatDau_TapCoBung extends Fragment {
     public void setList (ArrayList arr) {
         arr.add(new BatDau_Model("GÁNH TẠ NHẢY"));
         arr.add(new BatDau_Model("GẬP BỤNG NGƯỢC"));
-        arr.add(new BatDau_Model("TẤM VÁN THẲNG TAY"));
+        arr.add(new BatDau_Model("GẬP BỤNG CHÉO"));
+        arr.add(new BatDau_Model("ĐO SÀN"));
+        arr.add(new BatDau_Model("TẤM VÁN THẰNG TAY"));
         arr.add(new BatDau_Model("GIẢM MỠ TOÀN THÂN"));
         arr.add(new BatDau_Model("NÂNG TAY DÀI"));
         arr.add(new BatDau_Model("CẦU MỘT CHÂN"));
-        arr.add(new BatDau_Model("CHỐNG ĐỠ MỘT CHÂN"));
-        arr.add(new BatDau_Model("ĐO SÀN"));
-        arr.add(new BatDau_Model("GẬP BỤNG NGANG CHÂN"));
-        arr.add(new BatDau_Model("GẬP BỤNG ĐẠP XE"));
     }
 
 }

@@ -34,16 +34,14 @@ public class Fragment_BatDau_CoDien extends Fragment {
     }
 
     public void setList (ArrayList arr) {
+        arr.add(new BatDau_Model("CHỐNG ĐẨY"));
+        arr.add(new BatDau_Model("NGỒI DỰA TƯỜNG"));
         arr.add(new BatDau_Model("ĐO SÀN"));
+        arr.add(new BatDau_Model("CHỐNG ĐẨY VÀ XOAY NGƯỜI"));
         arr.add(new BatDau_Model("BƯỚC LÊN GHẾ"));
         arr.add(new BatDau_Model("TẬP CƠ BỤNG"));
         arr.add(new BatDau_Model("TẬP CƠ TAY SAU TRÊN GHẾ"));
-        arr.add(new BatDau_Model("VÁN NGHIÊNG - TRÁI"));
-        arr.add(new BatDau_Model("CHỐNG ĐẨY"));
-        arr.add(new BatDau_Model("NGỒI DỰA TƯỜNG"));
         arr.add(new BatDau_Model("BƯỚC GẬP GỐI"));
-        arr.add(new BatDau_Model("GÁNH ĐÙI"));
-        arr.add(new BatDau_Model("VÁN NGHIÊNG - PHẢI"));
     }
 
 }

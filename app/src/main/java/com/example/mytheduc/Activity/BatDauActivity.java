@@ -45,6 +45,22 @@ public class BatDauActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(BatDauActivity.this, SanSangActivity.class);
                 startActivity(intent);
+                CountDownTimer countDownTimer = new CountDownTimer(15000, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        int current = progressBar.getProgress();
+                        if (current >=progressBar.getMax()) {
+                            current = 0;
+                        }
+                        progressBar.setProgress(current + 10);
+                    }
+                    @Override
+                    public void onFinish() {
+
+
+                    }
+                };
+                countDownTimer.start();
             }
         });
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -80,6 +96,5 @@ public class BatDauActivity extends AppCompatActivity {
                 break;
             }
         }
-
     }
 }

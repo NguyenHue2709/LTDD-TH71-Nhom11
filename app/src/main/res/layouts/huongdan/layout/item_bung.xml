@@ -36,11 +36,16 @@
                 android:textSize="16dp"
                 android:textStyle="bold"
                 android:padding="10dp"/>
-            <ImageView
-                android:id="@+id/imgBung"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@mipmap/ic_launcher_round"/>
+                android:layout_height="180dp">
+                <ImageView
+                    android:id="@+id/imgBung"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/ic_launcher_round"/>
+            </FrameLayout>
+
             <TextView
                 android:id="@+id/txt_huongDanBung"
                 android:layout_width="match_parent"

@@ -47,14 +47,14 @@ public class Fragment_Bung extends Fragment {
         super.onCreate(savedInstanceState);
         bungPlanetArrayList = new ArrayList<>();
 
-        bungPlanetArrayList.add(new BungPlanet("1. GÁNH TẠ NHẢY", R.drawable.ganhta,"Bắt đầu ở tư thế gánh tạ, ròi dùng cơ bụng bật nhảy lên để tạo sức mạnh. Bài tập này tập cho bụng." ));
-        bungPlanetArrayList.add(new BungPlanet("2. GẶP BỤNG NGƯỢC", R.drawable.gapbungnguoc,"Nằm ngữa giữ đầu gối bạn vuông góc và tay để phía sau đầu. Nâng đùi và thân trên lên, sau đó duỗi căng ra. Lặp lại động tác này."));
-        bungPlanetArrayList.add(new BungPlanet("3. GẶP BỤNG CHÉO", R.drawable.gapcheo,"Ngồi trên sàn với đầu gối cong, bàn chân đặt xuống mặt sàn và lựng nghiêng về sau. Sau đó nắm hai tay với nhau và xoay vặn từ bên này sang bên kia. Bài tập này tập cho cơ liên sườn"));
-        bungPlanetArrayList.add(new BungPlanet("4. ĐO SÀN",R.drawable.dosan,"nằm trên sàn, chạm sàn bằng ngón chân và cẳng tay. Giữ thẳng cơ thể và giữ cơ thể càng lâu càng tốt. Bài tập này làm khỏe cơ bụng, lưng và vai"));
-        bungPlanetArrayList.add(new BungPlanet("5. TẤM VÁN THẲNG TAY", R.drawable.vanthantay,"bắt đầu ở tư thế chống đẩy, nhưng giữ thẳng cánh tay của bạn. Bài tập này giúp tập bụng và cơ lưng."));
-        bungPlanetArrayList.add(new BungPlanet("6. GIẢM MỠ TOÀN THÂN",R.drawable.giammotoanthan,"Đứng chân rộng bằng vai, sau đó đặt tay trên mặt đất và đá chân về phía sau. Chống đẩy nhanh rồi nhảy lên."));
-        bungPlanetArrayList.add(new BungPlanet("7. NÂNG TAY DÀI", R.drawable.nangtaydai,"nằm ngữa với đầu gối cong và chân để sát mặt sàn. Đặt cánh tay thẳng trên đỉnh đầu của bạn. Nâng thân trên của bạn khỏi sàn nhà, sau đó từ từ trở về vị trí ban đầu. Các bài tập tăng sức chịu đựng bụng"));
-        bungPlanetArrayList.add(new BungPlanet("8. CẦU MỘT CHÂN",R.drawable.cau1chan,"Nằm trên sàn, cong một chân và nhấc chân kia. Sau đó nhấc hông lên khỏi sàn. Giũ tư thế này trong năm giây. Bài tập này tập cho bụng và hông"));
+        bungPlanetArrayList.add(new BungPlanet("1. GÁNH TẠ NHẢY", R.drawable.bung1,"Bắt đầu ở tư thế gánh tạ, ròi dùng cơ bụng bật nhảy lên để tạo sức mạnh. Bài tập này tập cho bụng." ));
+        bungPlanetArrayList.add(new BungPlanet("2. GẶP BỤNG NGƯỢC", R.drawable.bung2,"Nằm ngữa giữ đầu gối bạn vuông góc và tay để phía sau đầu. Nâng đùi và thân trên lên, sau đó duỗi căng ra. Lặp lại động tác này."));
+        bungPlanetArrayList.add(new BungPlanet("3. GẶP BỤNG CHÉO", R.drawable.bung3,"Ngồi trên sàn với đầu gối cong, bàn chân đặt xuống mặt sàn và lựng nghiêng về sau. Sau đó nắm hai tay với nhau và xoay vặn từ bên này sang bên kia. Bài tập này tập cho cơ liên sườn"));
+        bungPlanetArrayList.add(new BungPlanet("4. ĐO SÀN",R.drawable.bung4,"nằm trên sàn, chạm sàn bằng ngón chân và cẳng tay. Giữ thẳng cơ thể và giữ cơ thể càng lâu càng tốt. Bài tập này làm khỏe cơ bụng, lưng và vai"));
+        bungPlanetArrayList.add(new BungPlanet("5. TẤM VÁN THẲNG TAY", R.drawable.bung5,"bắt đầu ở tư thế chống đẩy, nhưng giữ thẳng cánh tay của bạn. Bài tập này giúp tập bụng và cơ lưng."));
+        bungPlanetArrayList.add(new BungPlanet("6. GIẢM MỠ TOÀN THÂN",R.drawable.bung6,"Đứng chân rộng bằng vai, sau đó đặt tay trên mặt đất và đá chân về phía sau. Chống đẩy nhanh rồi nhảy lên."));
+        bungPlanetArrayList.add(new BungPlanet("7. NÂNG TAY DÀI", R.drawable.bung7,"nằm ngữa với đầu gối cong và chân để sát mặt sàn. Đặt cánh tay thẳng trên đỉnh đầu của bạn. Nâng thân trên của bạn khỏi sàn nhà, sau đó từ từ trở về vị trí ban đầu. Các bài tập tăng sức chịu đựng bụng"));
+        bungPlanetArrayList.add(new BungPlanet("8. CẦU MỘT CHÂN",R.drawable.bung8,"Nằm trên sàn, cong một chân và nhấc chân kia. Sau đó nhấc hông lên khỏi sàn. Giũ tư thế này trong năm giây. Bài tập này tập cho bụng và hông"));
 
     }
 }

@@ -76,7 +76,7 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
         });
 
         nPRelay = (Button) findViewById(R.id.btn_DialogNumberPicker);
-        NumberRelay = (TextView) findViewById(R.id.txt_Number);
+        NumberRelay = (TextView) findViewById(R.id.txt_Laplai);
         NumberRelay.setText("1 lần");
         nPRelay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +86,7 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
         });
 
         npTime = (Button) findViewById(R.id.btn_DialogTimePicker1);
-        NumberTime = (TextView) findViewById(R.id.txt_Time1);
+        NumberTime = (TextView) findViewById(R.id.txt_MoiBaiTap);
         NumberTime.setText("10 giây");
         npTime.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,7 +96,7 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
         });
 
         nPSafe = (Button) findViewById(R.id.btn_DialogTimePicker2);
-        NumberSafe = (TextView) findViewById(R.id.txt_Time2);
+        NumberSafe = (TextView) findViewById(R.id.txt_NghiNgoi);
         NumberSafe.setText("5 giây");
         nPSafe.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,7 +106,7 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
         });
 
         nPCountDown = (Button) findViewById(R.id.btn_DialogTimePicker3);
-        NumberCountDown = (TextView) findViewById(R.id.txt_Time3);
+        NumberCountDown = (TextView) findViewById(R.id.txt_DemNguoc);
         NumberCountDown.setText("10 giây");
         nPCountDown.setOnClickListener(new View.OnClickListener() {
             @Override

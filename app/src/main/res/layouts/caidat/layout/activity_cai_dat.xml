@@ -20,38 +20,36 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textview1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="left|center"
-                android:paddingLeft="15dp"
-                android:text="TÀI KHOẢN"
-                android:textColor="@color/colorAccent"
-                android:textSize="20dp" />
-        </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textview1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left|center"
+                    android:paddingLeft="15dp"
+                    android:text="TÀI KHOẢN"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/imgAcount"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="top"
                     android:src="@drawable/ic_acount" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
                     <Button
                         android:id="@+id/btn_Ac"
                         android:layout_width="match_parent"
@@ -59,7 +57,7 @@
                         android:background="@drawable/button_color"
                         android:gravity="left|center"
                         android:paddingLeft="15dp"
-                        android:text="Lưu trữ dữ liệu"
+                        android:text="Login"
                         android:textAllCaps="false"
                         android:textColor="#000000"
                         android:textSize="20dp" />
@@ -70,15 +68,12 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
                         android:textSize="15dp"
-                        android:textStyle="bold"
-                        android:textColor="#FF5722"
                         tools:ignore="MissingConstraints" />
                 </LinearLayout>
-
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="60dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -95,13 +90,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/imgReplay"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="top"
                     android:src="@drawable/ic_replay" />
 
@@ -139,13 +134,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/imgTime"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="top"
                     android:src="@drawable/ic_time" />
 
@@ -180,13 +175,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/imgSafe"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="top"
                     android:src="@drawable/ic_safe" />
 
@@ -221,13 +216,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/imgCount"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="top"
                     android:src="@drawable/ic_countdown" />
 
@@ -262,14 +257,14 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
 
                 <ImageView
                     android:id="@+id/imgVolume"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_volume" />
 
@@ -288,9 +283,8 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:orientation="horizontal">
-
+                android:layout_height="60dp"
+                android:orientation="vertical">
                 <TextView
                     android:id="@+id/textview3"
                     android:layout_width="match_parent"
@@ -304,104 +298,109 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/imgDuLieuSucKhoe"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="top"
                     android:padding="3dp"
                     android:src="@drawable/ic_dulieusuckhoe" />
-
-                <LinearLayout
+                <Button
+                    android:id="@+id/btn_DuLieuSucKhoe"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:id="@+id/btn_DuLieuSucKhoe"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/button_color"
-                        android:gravity="left|center"
-                        android:paddingLeft="15dp"
-                        android:text="Dữ liệu sức khỏe"
-                        android:textAllCaps="false"
-                        android:textColor="#000000"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:id="@+id/txt_DuLieuSucKhoe"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        android:paddingLeft="30dp"
-                        android:textSize="22dp"
-                        tools:ignore="MissingConstraints" />
-                </LinearLayout>
-
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_color"
+                    android:gravity="left|center"
+                    android:paddingLeft="15dp"
+                    android:text="Dữ liệu sức khỏe"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
 
                 <ImageView
                     android:id="@+id/imgNhacTapMoiNgay"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="top"
                     android:padding="3dp"
                     android:src="@drawable/ic_nhactapmoingay" />
-
-                <LinearLayout
+                <Switch
+                    android:id="@+id/switch_NhacTapMoiNgay"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:id="@+id/btn_NhacTapMoiNgay"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/button_color"
-                        android:gravity="left|center"
-                        android:paddingLeft="15dp"
-                        android:text="Nhắc tôi tập mỗi ngày"
-                        android:textAllCaps="false"
-                        android:textColor="#000000"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:id="@+id/txt_NhacTapMoiNgay"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        android:paddingLeft="30dp"
-                        android:textSize="22dp"
-                        tools:ignore="MissingConstraints" />
-                </LinearLayout>
+                    android:layout_height="match_parent"
+                    android:gravity="left|center"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="30dp"
+                    android:switchMinWidth="60dp"
+                    android:shadowColor="#FFFFFF"
+                    android:text="Nhắc tôi tập mỗi ngày"
+                    android:textColor="#373636"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
+
             <LinearLayout
+                android:id="@+id/llNhacTapMoiNgay"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <ImageView
-                    android:id="@+id/imgGiuManHinhBat"
-                    android:layout_width="78dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_phone" />
+                    android:id="@+id/imgNhacTapThoiGian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_gravity="top"
+                    android:padding="3dp"
+                    android:src="@drawable/ic_laplai" />
+                <Button
+                    android:id="@+id/btn_NhacTapThoiGian"
+                    android:layout_width="240dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_color"
+                    android:gravity="left|center"
+                    android:paddingLeft="15dp"
+                    android:text="Lặp lại"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/txtNhacTapThoiGian"
+                    android:layout_width="95dp"
+                    android:layout_height="match_parent"
+                    android:gravity="left|center"
+                    android:text=""
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20dp"/>
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/imgGiuManHinhBat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_gravity="top"
+                    android:padding="3dp"
+                    android:src="@drawable/ic_phone" />
                 <Switch
                     android:id="@+id/switch_GiuManHinhBat"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center"
+                    android:gravity="left|center"
                     android:paddingLeft="15dp"
                     android:paddingRight="30dp"
                     android:shadowColor="#FFFFFF"
@@ -414,13 +413,13 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="60dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textview4"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="match_parent"
                     android:gravity="left|center"
                     android:paddingLeft="15dp"
                     android:text="CỘNG ĐỒNG"
@@ -436,38 +435,39 @@
                 <ImageView
                     android:id="@+id/imgDienDan"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="match_parent"
                     android:layout_gravity="top"
                     android:padding="3dp"
                     android:src="@drawable/ic_congdong" />
 
-                <LinearLayout
+                <Button
+                    android:id="@+id/btn_DienDan"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <Button
-                        android:id="@+id/btn_DienDan"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/button_color"
-                        android:gravity="left|center"
-                        android:paddingLeft="30dp"
-                        android:text="Diễn đàn"
-                        android:textAllCaps="false"
-                        android:textColor="#000000"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:id="@+id/txt_DienDan"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="30dp"
-                        android:textSize="22dp"
-                        tools:ignore="MissingConstraints" />
-                </LinearLayout>
-
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_color"
+                    android:gravity="left|center"
+                    android:paddingLeft="30dp"
+                    android:text="Diễn đàn"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textviewKCcongdong"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left|center"
+                    android:paddingLeft="15dp"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+
         </LinearLayout>
     </ScrollView>
 

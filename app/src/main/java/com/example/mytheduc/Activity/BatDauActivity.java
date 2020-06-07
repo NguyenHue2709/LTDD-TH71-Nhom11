@@ -96,15 +96,5 @@ public class BatDauActivity extends AppCompatActivity {
                 break;
             }
         }
-
-
-        sw = (Switch) findViewById(R.id.switchNgauNhien);
-        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Collections.shuffle(listBaiTap);
-                batDauAdapter = new BatDauAdapter(listBaiTap);
-            }
-        });
     }
 }

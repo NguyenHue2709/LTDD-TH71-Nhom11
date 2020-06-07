@@ -12,6 +12,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import androidx.fragment.app.DialogFragment;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
@@ -40,20 +41,20 @@ import java.security.NoSuchAlgorithmException;
 public  class CaiDatActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, NumberPicker.OnValueChangeListener {
 
     static Dialog d ;
-     Button btnAlertDialog;
-     TextView txtAc;
+    Button btnAlertDialog;
+    TextView txtAc;
 
-     Button nPRelay;
-     TextView NumberRelay;
+    Button nPRelay;
+    TextView NumberRelay;
 
-     Button npTime;
-     TextView NumberTime;
+    Button npTime;
+    TextView NumberTime;
 
-     Button nPSafe;
-     TextView NumberSafe;
+    Button nPSafe;
+    TextView NumberSafe;
 
-     Button nPCountDown;
-     TextView NumberCountDown;
+    Button nPCountDown;
+    TextView NumberCountDown;
 
 
     @Override
@@ -67,7 +68,6 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
         actionBar.setTitle("Cài đặt");
 
         btnAlertDialog = (Button) findViewById(R.id.btn_Ac);
-        txtAc = (TextView) findViewById(R.id.txt_Ac);
         btnAlertDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +76,7 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
         });
 
         nPRelay = (Button) findViewById(R.id.btn_DialogNumberPicker);
-        NumberRelay = (TextView) findViewById(R.id.txt_Number);
+        NumberRelay = (TextView) findViewById(R.id.txt_Laplai);
         NumberRelay.setText("1 lần");
         nPRelay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +86,7 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
         });
 
         npTime = (Button) findViewById(R.id.btn_DialogTimePicker1);
-        NumberTime = (TextView) findViewById(R.id.txt_Time1);
+        NumberTime = (TextView) findViewById(R.id.txt_MoiBaiTap);
         NumberTime.setText("10 giây");
         npTime.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,7 +96,7 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
         });
 
         nPSafe = (Button) findViewById(R.id.btn_DialogTimePicker2);
-        NumberSafe = (TextView) findViewById(R.id.txt_Time2);
+        NumberSafe = (TextView) findViewById(R.id.txt_NghiNgoi);
         NumberSafe.setText("5 giây");
         nPSafe.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,7 +106,7 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
         });
 
         nPCountDown = (Button) findViewById(R.id.btn_DialogTimePicker3);
-        NumberCountDown = (TextView) findViewById(R.id.txt_Time3);
+        NumberCountDown = (TextView) findViewById(R.id.txt_DemNguoc);
         NumberCountDown.setText("10 giây");
         nPCountDown.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -192,7 +192,8 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
                 String user = etUsername.getText().toString();
                 String pass = etPassword.getText().toString();
                 Toast.makeText(getBaseContext(), "Username: " + user + " Password: " + pass, Toast.LENGTH_SHORT).show();
-                txtAc.setText(etUsername.getText().toString());
+                btnAlertDialog.setText(etUsername.getText().toString());
+                btnAlertDialog.setTextColor(Color.parseColor("#F29F05"));
             }
         });
         AlertDialog dialog = builder.create();

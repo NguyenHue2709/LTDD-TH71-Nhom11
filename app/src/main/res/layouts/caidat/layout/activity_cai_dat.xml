@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FFFFFF"
     tools:context=".Activity.CaiDatActivity">
 
     <ScrollView
@@ -37,12 +38,12 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/imgAcount"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="60dp"
                     android:layout_gravity="top"
                     android:src="@drawable/ic_acount" />
@@ -50,25 +51,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <Button
                         android:id="@+id/btn_Ac"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="60dp"
                         android:background="@drawable/button_color"
                         android:gravity="left|center"
                         android:paddingLeft="15dp"
                         android:text="Login"
                         android:textAllCaps="false"
                         android:textColor="#000000"
+
                         android:textSize="20dp" />
 
-                    <TextView
-                        android:id="@+id/txt_Ac"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="30dp"
-                        android:textSize="15dp"
-                        tools:ignore="MissingConstraints" />
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -95,7 +91,7 @@
 
                 <ImageView
                     android:id="@+id/imgReplay"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="60dp"
                     android:layout_gravity="top"
                     android:src="@drawable/ic_replay" />
@@ -123,8 +119,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
                         android:textSize="15dp"
-                        tools:ignore="MissingConstraints"
-                        android:text="1"/>
+                        tools:ignore="MissingConstraints" />
 
 
                 </LinearLayout>
@@ -139,7 +134,7 @@
 
                 <ImageView
                     android:id="@+id/imgTime"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="60dp"
                     android:layout_gravity="top"
                     android:src="@drawable/ic_time" />
@@ -167,8 +162,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
                         android:textSize="15dp"
-                        tools:ignore="MissingConstraints"
-                        android:text="20"/>
+                        tools:ignore="MissingConstraints" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -180,7 +174,7 @@
 
                 <ImageView
                     android:id="@+id/imgSafe"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="60dp"
                     android:layout_gravity="top"
                     android:src="@drawable/ic_safe" />
@@ -208,8 +202,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
                         android:textSize="15dp"
-                        tools:ignore="MissingConstraints"
-                        android:text="10"/>
+                        tools:ignore="MissingConstraints" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -221,7 +214,7 @@
 
                 <ImageView
                     android:id="@+id/imgCount"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="60dp"
                     android:layout_gravity="top"
                     android:src="@drawable/ic_countdown" />
@@ -249,8 +242,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
                         android:textSize="15dp"
-                        tools:ignore="MissingConstraints"
-                        android:text="10"/>
+                        tools:ignore="MissingConstraints" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -263,7 +255,7 @@
 
                 <ImageView
                     android:id="@+id/imgVolume"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_volume" />
@@ -303,7 +295,7 @@
 
                 <ImageView
                     android:id="@+id/imgDuLieuSucKhoe"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="60dp"
                     android:layout_gravity="top"
                     android:padding="3dp"
@@ -329,7 +321,7 @@
 
                 <ImageView
                     android:id="@+id/imgNhacTapMoiNgay"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="60dp"
                     android:layout_gravity="top"
                     android:padding="3dp"
@@ -370,7 +362,7 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/button_color"
                     android:gravity="left|center"
-                    android:paddingLeft="15dp"
+                    android:paddingLeft="20dp"
                     android:text="Lặp lại"
                     android:textAllCaps="false"
                     android:textColor="#000000"
@@ -391,7 +383,7 @@
                 android:orientation="horizontal">
                 <ImageView
                     android:id="@+id/imgGiuManHinhBat"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="60dp"
                     android:layout_gravity="top"
                     android:padding="3dp"
@@ -435,7 +427,7 @@
                 <ImageView
                     android:id="@+id/imgDienDan"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="top"
                     android:padding="3dp"
                     android:src="@drawable/ic_congdong" />

@@ -1,29 +1,22 @@
 package com.example.mytheduc.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.mytheduc.Adapter.BaiTapViewPagerAdapter;
-import com.example.mytheduc.Adapter.CardAdapter;
 import com.example.mytheduc.Fragment.Fragment_BaiTap;
-import com.example.mytheduc.Fragment.Fragment_CoDien;
 import com.example.mytheduc.Fragment.Fragment_Lich;
-import com.example.mytheduc.Model.Planet;
-import com.example.mytheduc.OnClickItem;
 import com.example.mytheduc.R;
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.ArrayList;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Fragment_Lich.OnFragmentInteractionListener{
 
     TabLayout tabLayout;
     ViewPager viewPager;
@@ -76,5 +69,10 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

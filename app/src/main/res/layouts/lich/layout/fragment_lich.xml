@@ -7,20 +7,18 @@
     android:orientation="vertical"
     android:background="#FFFFFF"
     tools:ignore="MissingConstraints">
-    <androidx.cardview.widget.CardView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <TextView
             android:id="@+id/tvPickDate"
-            android:textSize="30dp"
+            android:textSize="22dp"
             android:textColor="@color/colorPrimary"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="55dp"
             android:hint="Select Date"/>
-
         <CalendarView
             android:id="@+id/calView"
             android:layout_width="fill_parent"
@@ -31,9 +29,6 @@
             android:focusedMonthDateColor="@color/colorPrimary"
             android:unfocusedMonthDateColor="#9E9C9C"
             android:verticalScrollbarPosition="right"/>
-
-
-    </androidx.cardview.widget.CardView>
-
+    </FrameLayout>
 
 </LinearLayout>

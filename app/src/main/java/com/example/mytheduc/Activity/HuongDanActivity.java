@@ -6,17 +6,13 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Button;
 
 import com.example.mytheduc.Adapter.BaiTapViewPagerAdapter;
-import com.example.mytheduc.Fragment.Fragment_BaiTap;
 import com.example.mytheduc.Fragment.Fragment_BayPhut;
 import com.example.mytheduc.Fragment.Fragment_Bung;
 import com.example.mytheduc.Fragment.Fragment_Chan;
 import com.example.mytheduc.Fragment.Fragment_CoDien;
-import com.example.mytheduc.Fragment.Fragment_Lich;
 import com.example.mytheduc.Fragment.Fragment_Tay;
-import com.example.mytheduc.OnClickItem;
 import com.example.mytheduc.R;
 import com.google.android.material.tabs.TabLayout;
 

@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,7 @@ import com.example.mytheduc.R;
 
 public class Fragment_Lich extends Fragment {
     TextView tvPickerDate;
+    ImageView imageView_lich;
     String selectedDate;
 
     EditText ssnET;
@@ -49,10 +51,10 @@ public class Fragment_Lich extends Fragment {
 
         // get reference to edit text
         tvPickerDate = view.findViewById(R.id.tvPickDate);
+        imageView_lich = view.findViewById(R.id.icon_lich);
 
         // apply the input mask
         tvPickerDate.addTextChangedListener(new DateMask());
-
 
         // get fragment manager so we can launch from fragment
         final FragmentManager fm = ((AppCompatActivity)getActivity()).getSupportFragmentManager();
@@ -66,6 +68,15 @@ public class Fragment_Lich extends Fragment {
                 // set the targetFragment to receive the results, specifying the request code
                 newFragment.setTargetFragment(Fragment_Lich.this, REQUEST_CODE);
                 // show the datePicker
+                newFragment.show(fm, "datePicker");
+            }
+        });
+
+        imageView_lich.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppCompatDialogFragment newFragment = new Fragment_DatePickerDialog();
+                newFragment.setTargetFragment(Fragment_Lich.this, REQUEST_CODE);
                 newFragment.show(fm, "datePicker");
             }
         });

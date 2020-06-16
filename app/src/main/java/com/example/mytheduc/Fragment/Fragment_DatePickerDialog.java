@@ -37,7 +37,7 @@ public class Fragment_DatePickerDialog extends AppCompatDialogFragment implement
         c.set(Calendar.YEAR, year);
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, day);
-        String selectedDate = new SimpleDateFormat("MM/dd/yyyy", Locale.ENGLISH).format(c.getTime());
+        String selectedDate = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH).format(c.getTime());
 
 
         Log.d(TAG, "onDateSet: " + selectedDate);

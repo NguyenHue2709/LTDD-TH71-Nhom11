@@ -1,34 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="#FFFFFF"
     tools:ignore="MissingConstraints">
-    <FrameLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/tvPickDate"
-            android:textSize="22dp"
-            android:textColor="@color/colorPrimary"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="55dp"
-            android:hint="Select Date"/>
-        <CalendarView
-            android:id="@+id/calView"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_marginTop="110dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card">
 
-            android:focusableInTouchMode="true"
-            android:focusedMonthDateColor="@color/colorPrimary"
-            android:unfocusedMonthDateColor="#9E9C9C"
-            android:verticalScrollbarPosition="right"/>
-    </FrameLayout>
+            <ImageView
+                android:id="@+id/icon_lich"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="350dp"
+                android:layout_marginTop="55dp"
+                android:src="@drawable/ic_lich" />
+
+            <TextView
+                android:id="@+id/tvPickDate"
+                android:layout_width="246dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-28dp"
+                android:gravity="center"
+                android:hint="Nhấp vào để chọn ngày"
+                android:textColor="@color/colorPrimary"
+                android:textSize="22dp" />
+
+            <CalendarView
+                android:id="@+id/calView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:focusedMonthDateColor="@color/colorPrimary"
+                android:paddingLeft="-10dp"
+                android:layout_marginLeft="-20dp"
+                android:layout_marginTop="-15dp"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_number1"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/tv_number2"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center" />
+                <TextView
+                    android:id="@+id/tv_number3"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Chuỗi liên tục tối đa"
+                    android:textColor="#9C9B99"
+                    android:textSize="13.5dp"
+                    android:paddingRight="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Chuỗi liên tục hiện tại"
+                    android:textColor="#9C9B99"
+                    android:textSize="13.5dp"
+                    android:paddingRight="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Tổng 30 ngày qua "
+                    android:textColor="#9C9B99"
+                    android:textSize="13.5dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_account_circle_black_24dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Không có dữ liệu"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="18dp"
+                    android:textColor="#000"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv-timeup"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    android:textSize="30dp"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/tv-pause"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="30dp"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/tv-loop"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="30dp"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="Thời lượng"
+                    android:textSize="14dp"
+                    android:textColor="#9C9B99"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="30dp"/>
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="Tạm dừng"
+                    android:textSize="14dp"
+                    android:textColor="#9C9B99"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="28dp"/>
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="Lặp lại"
+                    android:textSize="14dp"
+                    android:textColor="#9C9B99"
+                    android:paddingLeft="40dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

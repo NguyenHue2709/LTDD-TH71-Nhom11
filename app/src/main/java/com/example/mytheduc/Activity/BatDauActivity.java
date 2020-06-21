@@ -30,10 +30,9 @@ import java.util.Collections;
 
 public class BatDauActivity extends AppCompatActivity {
     private ProgressBar progressBar;
-    private ArrayList<BatDau_Model> listBaiTap = new ArrayList<>();
-    private Switch sw;
+    private static ArrayList<BatDau_Model> listBaiTap = new ArrayList<>();
     private Button btn_Di;
-    BatDauAdapter batDauAdapter;
+    private static int [] imgArray = new int[8];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +53,7 @@ public class BatDauActivity extends AppCompatActivity {
             case "CỔ ĐIỂN": {
                 Fragment_BatDau_CoDien fragment_batDau_coDien = new Fragment_BatDau_CoDien();
                 fragment_batDau_coDien.setList(listBaiTap);
+                imgArray = fragment_batDau_coDien.getImgArray();
                 fragmentTransaction.add(R.id.fragBatDau, fragment_batDau_coDien);
                 fragmentTransaction.commit();
                 break;
@@ -61,6 +61,7 @@ public class BatDauActivity extends AppCompatActivity {
             case "TẬP CƠ BỤNG":{
                 Fragment_BatDau_TapCoBung fragment_batDau_tapCoBung = new Fragment_BatDau_TapCoBung();
                 fragment_batDau_tapCoBung.setList(listBaiTap);
+                imgArray = fragment_batDau_tapCoBung.getImgArray();
                 fragmentTransaction.add(R.id.fragBatDau, fragment_batDau_tapCoBung);
                 fragmentTransaction.commit();
                 break;
@@ -68,6 +69,7 @@ public class BatDauActivity extends AppCompatActivity {
             case "TẬP CHÂN": {
                 Fragment_BatDau_TapChan fragment_batDau_tapChan = new Fragment_BatDau_TapChan();
                 fragment_batDau_tapChan.setList(listBaiTap);
+                imgArray = fragment_batDau_tapChan.getImgArray();
                 fragmentTransaction.add(R.id.fragBatDau, fragment_batDau_tapChan);
                 fragmentTransaction.commit();
                 break;
@@ -75,10 +77,18 @@ public class BatDauActivity extends AppCompatActivity {
             case "TẬP TAY": {
                 Fragment_BatDau_TapTay fragment_batDau_tapTay= new Fragment_BatDau_TapTay();
                 fragment_batDau_tapTay.setList(listBaiTap);
+                imgArray = fragment_batDau_tapTay.getImgArray();
                 fragmentTransaction.add(R.id.fragBatDau, fragment_batDau_tapTay);
                 fragmentTransaction.commit();
                 break;
             }
         }
+    }
+
+    public  static int[] getImgArray() {
+        return imgArray;
+    }
+    public static ArrayList getArrayList () {
+        return  listBaiTap;
     }
 }

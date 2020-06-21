@@ -20,6 +20,8 @@ public class Fragment_BatDau_CoDien extends Fragment {
     private BatDauAdapter batDauAdapter;
     private ArrayList<BatDau_Model> listBaiTap = new ArrayList<>();
     ListView list;
+    private int [] imgArray = {R.drawable.codien1, R.drawable.codien2, R.drawable.codien3, R.drawable.codien4,
+            R.drawable.codien5, R.drawable.codien6, R.drawable.codien7, R.drawable.codien8};
 
     @Nullable
     @Override
@@ -44,4 +46,7 @@ public class Fragment_BatDau_CoDien extends Fragment {
         arr.add(new BatDau_Model("BƯỚC GẬP GỐI"));
     }
 
+    public int[] getImgArray() {
+        return imgArray;
+    }
 }

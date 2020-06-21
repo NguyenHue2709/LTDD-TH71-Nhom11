@@ -20,6 +20,9 @@ public class Fragment_BatDau_TapChan extends Fragment {
     private BatDauAdapter batDauAdapter;
     private ArrayList<BatDau_Model> listBaiTap = new ArrayList<>();
     ListView list;
+    private int [] imgArray = {R.drawable.chan1, R.drawable.chan2, R.drawable.chan3, R.drawable.chan4,
+            R.drawable.chan5, R.drawable.chan6, R.drawable.chan7, R.drawable.chan8};
+
 
     @Nullable
     @Override
@@ -44,4 +47,7 @@ public class Fragment_BatDau_TapChan extends Fragment {
         arr.add(new BatDau_Model("CHÙNG CHÂN SAU"));
     }
 
+    public int[] getImgArray() {
+        return imgArray;
+    }
 }

@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.text.Layout;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -17,7 +18,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.example.mytheduc.Model.BatDau_Model;
 import com.example.mytheduc.R;
+
+import java.util.ArrayList;
+import java.util.Timer;
 
 public class SanSangActivity extends AppCompatActivity {
     private TextView timeText;
@@ -27,6 +32,16 @@ public class SanSangActivity extends AppCompatActivity {
     private ImageButton ibtn_pre;
     private ImageButton ibtn_pause;
     private ImageButton ibtn_next;
+    private int [] imgArray = new int[8];
+    BatDauActivity batDauActivity = new BatDauActivity();
+    private ImageView imageView;
+    private Button btnTimer;
+    private CountDownTimer cdtDemNguoc;
+    private  CountDownTimer cdtBaiTap;
+    private CountDownTimer cdtNghiNgoi;
+    private Timer timer;
+    private ArrayList<BatDau_Model> listBaiTap = new ArrayList<>();
+    private static int position = 1;
 
     private boolean isPaused = false;
     private boolean isCanceled = false;
@@ -35,9 +50,140 @@ public class SanSangActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sansang);
-        timeText = (TextView) findViewById(R.id.txtSecond);
-        progressBar = findViewById(R.id.progress_circular);
-        tv_tenBaiTap = findViewById(R.id.txt_ten);
+
+        init();
+
+
+       cdtDemNguoc = new CountDownTimer(5000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                if (isPaused || isCanceled) {
+                    //If the user request to cancel or paused the
+                    //CountDownTimer we will cancel the current instance
+                    cancel();
+                } else {
+                    //Display the remaining seconds to app interface
+                    //1 second = 1000 milliseconds
+                    timeText.setText("" + millisUntilFinished / 1000);
+                    //Put count down timer remaining time in a variable
+                    timeRemaining = millisUntilFinished;
+                    progressBar.setMax(5);
+                    int curent = progressBar.getProgress();
+                    if (curent < progressBar.getMax()) {
+                        progressBar.setProgress(curent + 1);
+                    }
+                }
+            }
+            @Override
+            public void onFinish() {
+                String tenBT = position + "/8 " + listBaiTap.get(position).getTenBaiTap();
+                tv_tenBaiTap.setText(tenBT);
+                imageView.setImageResource(imgArray[position]);
+                position++;
+                progressBar.setProgress(0);
+                cdtBaiTap = new CountDownTimer(10000, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        if (isPaused || isCanceled) {
+                            //If the user request to cancel or paused the
+                            //CountDownTimer we will cancel the current instance
+                            cancel();
+                        } else {
+                            //Display the remaining seconds to app interface
+                            //1 second = 1000 milliseconds
+                            timeText.setText("" + millisUntilFinished / 1000);
+                            //Put count down timer remaining time in a variable
+                            timeRemaining = millisUntilFinished;
+                            progressBar.setMax(10);
+                            int curent = progressBar.getProgress();
+                            if (curent < progressBar.getMax()) {
+                                progressBar.setProgress(curent + 1);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        progressBar.setProgress(0);
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                btnTimer.performClick();
+                            }
+                        }, 100);
+                    }
+                }.start();
+            }
+        }.start();
+
+        btnTimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cdtNghiNgoi = new CountDownTimer(6000, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        if (isPaused || isCanceled) {
+                            //If the user request to cancel or paused the
+                            //CountDownTimer we will cancel the current instance
+                            cancel();
+                        } else {
+                            //Display the remaining seconds to app interface
+                            //1 second = 1000 milliseconds
+                            timeText.setText("" + millisUntilFinished / 1000);
+                            //Put count down timer remaining time in a variable
+                            timeRemaining = millisUntilFinished;
+                            progressBar.setMax(6);
+                            int curent = progressBar.getProgress();
+                            if (curent < progressBar.getMax()) {
+                                progressBar.setProgress(curent + 1);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        String tenBT = position + "/8 " + listBaiTap.get(position).getTenBaiTap();
+                        tv_tenBaiTap.setText(tenBT);
+                        imageView.setImageResource(imgArray[position]);
+                        position++;
+                        progressBar.setProgress(0);
+                        cdtBaiTap = new CountDownTimer(10000, 1000) {
+                            @Override
+                            public void onTick(long millisUntilFinished) {
+                                if (isPaused || isCanceled) {
+                                    //If the user request to cancel or paused the
+                                    //CountDownTimer we will cancel the current instance
+                                    cancel();
+                                } else {
+                                    //Display the remaining seconds to app interface
+                                    //1 second = 1000 milliseconds
+                                    timeText.setText("" + millisUntilFinished / 1000);
+                                    //Put count down timer remaining time in a variable
+                                    timeRemaining = millisUntilFinished;
+                                    progressBar.setMax(10);
+                                    int curent = progressBar.getProgress();
+                                    if (curent < progressBar.getMax()) {
+                                        progressBar.setProgress(curent + 1);
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onFinish() {
+                                progressBar.setProgress(0);
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        btnTimer.performClick();
+                                    }
+                                }, 100);
+                            }
+                        }.start();
+                    }
+                }.start();
+            }
+        });
+
         gestureDetector = new GestureDetector(this, new MyGesture());
         ConstraintLayout mylayout = findViewById(R.id.layout_sansang);
         mylayout.setOnTouchListener(new View.OnTouchListener() {
@@ -48,7 +194,32 @@ public class SanSangActivity extends AppCompatActivity {
                 return false;
             }
         });
-        StartTimer(10000, 1000);
+        //StartTimer(10000, 1000);
+
+
+
+
+
+
+    }
+
+    public void demNguoc () {
+         new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btnTimer.performClick();
+            }
+        }, 2000);
+    }
+    public void init (){
+        timeText = (TextView) findViewById(R.id.txtSecond);
+        progressBar = findViewById(R.id.progress_circular);
+        tv_tenBaiTap = findViewById(R.id.txt_tenBaiTap);
+        imgArray = batDauActivity.getImgArray();
+        imageView = findViewById(R.id.img_baiTap);
+        btnTimer = findViewById(R.id.btnTimer);
+        listBaiTap = batDauActivity.getArrayList();
+
     }
     class MyGesture extends GestureDetector.SimpleOnGestureListener {
         @Override
@@ -71,7 +242,7 @@ public class SanSangActivity extends AppCompatActivity {
             return super.onDown(e);
         }
     }
-    public void StartTimer (long millisInFuture,long countDownInterval) {
+    public void StartTimer (final long millisInFuture, long countDownInterval) {
         CountDownTimer timer;
         //Initialize a new CountDownTimer instance
         timer = new CountDownTimer(millisInFuture, countDownInterval) {
@@ -89,7 +260,7 @@ public class SanSangActivity extends AppCompatActivity {
                     timeRemaining = millisUntilFinished;
                     int curent = progressBar.getProgress();
                     if (curent < progressBar.getMax()){
-                        progressBar.setProgress(curent + 10);
+                        progressBar.setProgress(curent + 10/(int)millisInFuture);
                     }
                 }
             }

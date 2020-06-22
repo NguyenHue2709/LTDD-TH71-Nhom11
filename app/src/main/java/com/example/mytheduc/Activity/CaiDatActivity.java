@@ -1,20 +1,26 @@
 package com.example.mytheduc.Activity;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.DialogFragment;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.wifi.p2p.WifiP2pManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
@@ -37,8 +43,11 @@ import com.example.mytheduc.R;
 import java.net.ConnectException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Calendar;
 
 public  class CaiDatActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, NumberPicker.OnValueChangeListener {
+
+    private NotificationHelper mNotificationHelper;
 
     static Dialog d ;
     Button btnAlertDialog;
@@ -140,6 +149,43 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
         });
 
     }
+
+    /* Gán giờ vào textview tại mục Lặp lại*/
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.HOUR_OF_DAY, hourOfDay);
+        c.set(Calendar.MINUTE, minute);
+        c.set(Calendar.SECOND, 0);
+        TextView txtv = (TextView) findViewById(R.id.txtNhacTapThoiGian);
+        txtv.setText(hourOfDay + ":" + minute);
+
+        startAlarm(c);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private  void startAlarm(Calendar c) {
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, AlertReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+    }
+
+    public void sendOnChanel1() {
+        NotificationCompat.Builder nb = mNotificationHelper.getChanel1Noti();
+        mNotificationHelper.getmManager().notify(1, nb.build());
+    }
+
+    public  void cancelAlarm() {
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, AlertReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+        alarmManager.cancel(pendingIntent);
+        TextView txtv = (TextView) findViewById(R.id.txtNhacTapThoiGian);
+        txtv.setText(" ");
+    }
+
     public void setTime () {
         replay = Long.parseLong(NumberRelay.getText().toString());
         safe = Long.parseLong(NumberSafe.getText().toString());
@@ -323,12 +369,7 @@ public  class CaiDatActivity extends AppCompatActivity implements TimePickerDial
 
     }
 
-    /* Gán giờ vào textview tại mục Lặp lại*/
-    @Override
-    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        TextView txtv = (TextView) findViewById(R.id.txtNhacTapThoiGian);
-        txtv.setText(hourOfDay + ":" + minute);
-    }
+
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {

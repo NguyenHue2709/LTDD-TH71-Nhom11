@@ -62,7 +62,7 @@ public class SanSangActivity extends AppCompatActivity {
         imageView.setImageResource(imgArray[position]);
         position++;
         countDownTimer = cdtDemNguoc;
-        cdtDemNguoc = new CountDownTimer(5000, 1000) {
+        cdtDemNguoc = new CountDownTimer(15000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 if (isPaused || isCanceled) {
@@ -75,7 +75,7 @@ public class SanSangActivity extends AppCompatActivity {
                     timeText.setText("" + millisUntilFinished / 1000);
                     //Put count down timer remaining time in a variable
                     timeRemaining = millisUntilFinished;
-                    progressBar.setMax(5);
+                    progressBar.setMax(15);
                     int curent = progressBar.getProgress();
                     if (curent < progressBar.getMax()) {
                         progressBar.setProgress(curent + 1);
@@ -88,7 +88,39 @@ public class SanSangActivity extends AppCompatActivity {
                 txt2.setText("");
                 progressBar.setProgress(0);
                 countDownTimer = cdtBaiTap;
-                cdtBaiTap = new CountDownTimer(10000, 1000) {
+                cdtBaiTap = new CountDownTimer(20000, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        if (isPaused || isCanceled) {
+                            //If the user request to cancel or paused the
+                            //CountDownTimer we will cancel the current instance
+                            cancel();
+                        } else {
+                            //Display the remaining seconds to app interface
+                            //1 second = 1000 milliseconds
+                            timeText.setText("" + millisUntilFinished / 1000);
+                            //Put count down timer remaining time in a variable
+                            timeRemaining = millisUntilFinished;
+                            progressBar.setMax(20);
+                            int curent = progressBar.getProgress();
+                            if (curent < progressBar.getMax()) {
+                                progressBar.setProgress(curent + 1);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        autoClick();
+                    }
+                }.start();
+            }
+        }.start();
+        btnTimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countDownTimer = cdtNghiNgoi;
+                cdtNghiNgoi = new CountDownTimer(10000, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
                         if (isPaused || isCanceled) {
@@ -111,43 +143,11 @@ public class SanSangActivity extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
-                        autoClick();
-                    }
-                }.start();
-            }
-        }.start();
-        btnTimer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                countDownTimer = cdtNghiNgoi;
-                cdtNghiNgoi = new CountDownTimer(6000, 1000) {
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-                        if (isPaused || isCanceled) {
-                            //If the user request to cancel or paused the
-                            //CountDownTimer we will cancel the current instance
-                            cancel();
-                        } else {
-                            //Display the remaining seconds to app interface
-                            //1 second = 1000 milliseconds
-                            timeText.setText("" + millisUntilFinished / 1000);
-                            //Put count down timer remaining time in a variable
-                            timeRemaining = millisUntilFinished;
-                            progressBar.setMax(6);
-                            int curent = progressBar.getProgress();
-                            if (curent < progressBar.getMax()) {
-                                progressBar.setProgress(curent + 1);
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onFinish() {
                         txt1.setText("");
                         txt2.setText("");
                         progressBar.setProgress(0);
                         countDownTimer = cdtBaiTap;
-                        cdtBaiTap = new CountDownTimer(10000, 1000) {
+                        cdtBaiTap = new CountDownTimer(20000, 1000) {
                             @Override
                             public void onTick(long millisUntilFinished) {
                                 if (isPaused || isCanceled) {
@@ -160,7 +160,7 @@ public class SanSangActivity extends AppCompatActivity {
                                     timeText.setText("" + millisUntilFinished / 1000);
                                     //Put count down timer remaining time in a variable
                                     timeRemaining = millisUntilFinished;
-                                    progressBar.setMax(10);
+                                    progressBar.setMax(20);
                                     int curent = progressBar.getProgress();
                                     if (curent < progressBar.getMax()) {
                                         progressBar.setProgress(curent + 1);
@@ -184,7 +184,6 @@ public class SanSangActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 gestureDetector.onTouchEvent(event);
-                PauseTimer();
                 return false;
             }
         });

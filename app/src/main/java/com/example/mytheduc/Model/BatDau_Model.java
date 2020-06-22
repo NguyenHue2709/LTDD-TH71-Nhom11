@@ -8,7 +8,7 @@ public class BatDau_Model {
     private long giay;
     public BatDau_Model (String tenBaiTap){
         this.setTenBaiTap(tenBaiTap);
-        setGiay(caiDatActivity.moiBaitap);
+        setGiay(20);
     }
 
     public String getTenBaiTap() {

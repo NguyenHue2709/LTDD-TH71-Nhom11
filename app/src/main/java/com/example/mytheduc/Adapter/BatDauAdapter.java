@@ -43,7 +43,7 @@ public class BatDauAdapter extends BaseAdapter {
         }
         BatDau_Model batdau = (BatDau_Model) getItem(position);
         ((TextView) viewBatDau.findViewById(R.id.txtBaiTap)).setText(batdau.tenBaiTap);
-        ((TextView) viewBatDau.findViewById(R.id.txtGiay)).setText(batdau.giay);
+        ((TextView) viewBatDau.findViewById(R.id.txtGiay)).setText(String.valueOf(batdau.getGiay()) + "s");
         return viewBatDau;
     }
 }

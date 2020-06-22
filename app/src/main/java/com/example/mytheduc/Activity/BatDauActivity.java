@@ -3,6 +3,7 @@ import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -10,6 +11,9 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toolbar;
+
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -52,7 +56,7 @@ public class BatDauActivity extends AppCompatActivity {
         switch (id) {
             case "CỔ ĐIỂN": {
                 Fragment_BatDau_CoDien fragment_batDau_coDien = new Fragment_BatDau_CoDien();
-                fragment_batDau_coDien.setList(listBaiTap);
+                listBaiTap = fragment_batDau_coDien.getArrayList();
                 imgArray = fragment_batDau_coDien.getImgArray();
                 fragmentTransaction.add(R.id.fragBatDau, fragment_batDau_coDien);
                 fragmentTransaction.commit();
@@ -60,7 +64,7 @@ public class BatDauActivity extends AppCompatActivity {
             }
             case "TẬP CƠ BỤNG":{
                 Fragment_BatDau_TapCoBung fragment_batDau_tapCoBung = new Fragment_BatDau_TapCoBung();
-                fragment_batDau_tapCoBung.setList(listBaiTap);
+                listBaiTap = fragment_batDau_tapCoBung.getArrayList();
                 imgArray = fragment_batDau_tapCoBung.getImgArray();
                 fragmentTransaction.add(R.id.fragBatDau, fragment_batDau_tapCoBung);
                 fragmentTransaction.commit();
@@ -68,7 +72,7 @@ public class BatDauActivity extends AppCompatActivity {
             }
             case "TẬP CHÂN": {
                 Fragment_BatDau_TapChan fragment_batDau_tapChan = new Fragment_BatDau_TapChan();
-                fragment_batDau_tapChan.setList(listBaiTap);
+                listBaiTap = fragment_batDau_tapChan.getArrayList();
                 imgArray = fragment_batDau_tapChan.getImgArray();
                 fragmentTransaction.add(R.id.fragBatDau, fragment_batDau_tapChan);
                 fragmentTransaction.commit();
@@ -76,15 +80,27 @@ public class BatDauActivity extends AppCompatActivity {
             }
             case "TẬP TAY": {
                 Fragment_BatDau_TapTay fragment_batDau_tapTay= new Fragment_BatDau_TapTay();
-                fragment_batDau_tapTay.setList(listBaiTap);
+                listBaiTap = fragment_batDau_tapTay.getArrayList();
                 imgArray = fragment_batDau_tapTay.getImgArray();
                 fragmentTransaction.add(R.id.fragBatDau, fragment_batDau_tapTay);
                 fragmentTransaction.commit();
                 break;
             }
         }
-    }
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle(id.toString());
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id == android.R.id.home){
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
+    }
     public  static int[] getImgArray() {
         return imgArray;
     }

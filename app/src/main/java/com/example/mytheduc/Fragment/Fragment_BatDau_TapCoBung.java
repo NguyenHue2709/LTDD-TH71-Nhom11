@@ -29,24 +29,27 @@ public class Fragment_BatDau_TapCoBung extends Fragment {
         View view = inflater.inflate(R.layout.fragment_batdau_tapcobung, container, false);
 
         list = (ListView) view.findViewById(R.id.listBung);
-        setList(listBaiTap);
+        setList();
         batDauAdapter = new BatDauAdapter(listBaiTap);
         list.setAdapter(batDauAdapter);
         return view;
     }
 
-    public void setList (ArrayList arr) {
-        arr.add(new BatDau_Model("GÁNH TẠ NHẢY"));
-        arr.add(new BatDau_Model("GẬP BỤNG NGƯỢC"));
-        arr.add(new BatDau_Model("GẬP BỤNG CHÉO"));
-        arr.add(new BatDau_Model("ĐO SÀN"));
-        arr.add(new BatDau_Model("TẤM VÁN THẰNG TAY"));
-        arr.add(new BatDau_Model("GIẢM MỠ TOÀN THÂN"));
-        arr.add(new BatDau_Model("NÂNG TAY DÀI"));
-        arr.add(new BatDau_Model("CẦU MỘT CHÂN"));
+    public void setList () {
+        listBaiTap.add(new BatDau_Model("GÁNH TẠ NHẢY"));
+        listBaiTap.add(new BatDau_Model("GẬP BỤNG NGƯỢC"));
+        listBaiTap.add(new BatDau_Model("GẬP BỤNG CHÉO"));
+        listBaiTap.add(new BatDau_Model("ĐO SÀN"));
+        listBaiTap.add(new BatDau_Model("TẤM VÁN THẰNG TAY"));
+        listBaiTap.add(new BatDau_Model("GIẢM MỠ TOÀN THÂN"));
+        listBaiTap.add(new BatDau_Model("NÂNG TAY DÀI"));
+        listBaiTap.add(new BatDau_Model("CẦU MỘT CHÂN"));
     }
 
     public int[] getImgArray() {
         return imgArray;
+    }
+    public ArrayList getArrayList(){
+        return listBaiTap;
     }
 }

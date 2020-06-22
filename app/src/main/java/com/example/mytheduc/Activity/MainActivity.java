@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.example.mytheduc.Adapter.BaiTapViewPagerAdapter;
 import com.example.mytheduc.Fragment.Fragment_BaiTap;
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity implements Fragment_Lich.OnF
 
     TabLayout tabLayout;
     ViewPager viewPager;
+    TextView textView;
+    public long replay, moiBaiTap, safe, countDown;
 
 
     @Override
@@ -41,10 +44,18 @@ public class MainActivity extends AppCompatActivity implements Fragment_Lich.OnF
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0);
         tabLayout.getTabAt(1);
+
+        //safe = Long.parseLong(textView.getText().toString());
+        /*textView = findViewById(R.id.txt_DemNguoc);
+        countDown = Long.parseLong(textView.getText().toString());
+        textView = findViewById(R.id.txt_MoiBaiTap);
+        moiBaiTap = Long.parseLong(textView.getText().toString());
+        textView = findViewById(R.id.txt_Laplai);
+        replay = Long.parseLong(textView.getText().toString());*/
     }
 
     private void anhxa() {
-
+        textView = findViewById(R.id.txt_NghiNgoi);
         tabLayout = findViewById(R.id.myTabLayout);
         viewPager = findViewById(R.id.myViewPager);
     }

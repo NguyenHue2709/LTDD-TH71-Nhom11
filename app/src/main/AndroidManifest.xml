@@ -20,7 +20,6 @@
         </activity>
         <activity android:name=".Activity.BatDauActivity" />
         <activity android:name=".Activity.SanSangActivity" />
-        <activity android:name=".Activity.BatDau_Pause"/>
     </application>
 
 </manifest>

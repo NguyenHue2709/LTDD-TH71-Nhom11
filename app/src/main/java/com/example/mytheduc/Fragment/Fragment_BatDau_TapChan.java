@@ -30,24 +30,27 @@ public class Fragment_BatDau_TapChan extends Fragment {
         View view = inflater.inflate(R.layout.fragment_batdau_tapchan, container, false);
 
         list = (ListView) view.findViewById(R.id.listChan);
-        setList(listBaiTap);
+        setList();
         batDauAdapter = new BatDauAdapter(listBaiTap);
         list.setAdapter(batDauAdapter);
         return view;
     }
 
-    public void setList (ArrayList arr) {
-        arr.add(new BatDau_Model("NÂNG BẮP CHÂN"));
-        arr.add(new BatDau_Model("NẰM NGHIÊNG XOAY CHÂN"));
-        arr.add(new BatDau_Model("CHÙNG CHÂN NGANG"));
-        arr.add(new BatDau_Model("BƯỚC CHÙNG GỐI"));
-        arr.add(new BatDau_Model("CHÙNG CHÂN CHÉO"));
-        arr.add(new BatDau_Model("NÂNG BẤP CHÂN PHẢI Ở DƯỚI"));
-        arr.add(new BatDau_Model("NÂNG BẤP CHÂN TRÁI Ở DƯỚI"));
-        arr.add(new BatDau_Model("CHÙNG CHÂN SAU"));
+    public void setList () {
+        listBaiTap.add(new BatDau_Model("NÂNG BẮP CHÂN"));
+        listBaiTap.add(new BatDau_Model("NẰM NGHIÊNG XOAY CHÂN"));
+        listBaiTap.add(new BatDau_Model("CHÙNG CHÂN NGANG"));
+        listBaiTap.add(new BatDau_Model("BƯỚC CHÙNG GỐI"));
+        listBaiTap.add(new BatDau_Model("CHÙNG CHÂN CHÉO"));
+        listBaiTap.add(new BatDau_Model("NÂNG BẤP CHÂN PHẢI Ở DƯỚI"));
+        listBaiTap.add(new BatDau_Model("NÂNG BẤP CHÂN TRÁI Ở DƯỚI"));
+        listBaiTap.add(new BatDau_Model("CHÙNG CHÂN SAU"));
     }
 
     public int[] getImgArray() {
         return imgArray;
+    }
+    public ArrayList getArrayList(){
+        return listBaiTap;
     }
 }

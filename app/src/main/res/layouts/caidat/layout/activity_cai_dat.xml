@@ -119,6 +119,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
                         android:textSize="15dp"
+                        android:text="1"
                         tools:ignore="MissingConstraints" />
 
 
@@ -162,6 +163,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
                         android:textSize="15dp"
+                        android:text="20"
                         tools:ignore="MissingConstraints" />
                 </LinearLayout>
 
@@ -202,6 +204,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
                         android:textSize="15dp"
+                        android:text="10"
                         tools:ignore="MissingConstraints" />
                 </LinearLayout>
 
@@ -242,6 +245,7 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="30dp"
                         android:textSize="15dp"
+                        android:text="15"
                         tools:ignore="MissingConstraints" />
                 </LinearLayout>
 

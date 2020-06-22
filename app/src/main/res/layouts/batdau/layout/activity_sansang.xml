@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txt2"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
@@ -61,9 +61,9 @@
             android:layout_height="100dp"
             android:layout_marginTop="25dp"
             android:gravity="center"
-            android:text="HUIHSODHo"
+            android:text="Giây"
             android:textColor="@color/colorAccent"
-            android:textSize="25dp" />
+            android:textSize="30dp" />
     </FrameLayout>
 
     <Button
@@ -80,7 +80,7 @@
     </Button>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txt1"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"

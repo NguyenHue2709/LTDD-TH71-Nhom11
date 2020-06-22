@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".Activity.BatDauActivity" />
         <activity android:name=".Activity.SanSangActivity" />
+        <receiver android:name=".Activity.AlertReceiver" />
+
     </application>
 
 </manifest>
